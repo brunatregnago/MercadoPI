@@ -28,6 +28,8 @@ class Categoria extends CI_Controller {
         $this->form_validation->set_rules('nome_categoria', 'nome_categoria', 'required');
 
         if ($this->form_validation->run() == false) {
+            $this->load->model('DepartamentoModel');
+            $data['departamento'] = $this->DepartamentoModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/HeaderLateralProduto');
             $this->load->view('BackEnd/FormCategoria');
@@ -38,7 +40,7 @@ class Categoria extends CI_Controller {
                 'nome_categoria' => $this->input->post('nome_categoria')
             );
 
-            if ($this->CategoriaModel->inserir($data)) {
+            if ($this->CategoriaModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Categoria/lista');
             } else {
@@ -48,13 +50,13 @@ class Categoria extends CI_Controller {
         }
     }
 
-    public function alterar($id) {
-        if ($id > 0) {
+    public function alterar($id_categoria) {
+        if ($id_categoria > 0) {
 
             $this->form_validation->set_rules('nome_categoria', 'nome_categoria', 'required');
 
             if ($this->form_validation->run() == false) {
-                $data['categoria'] = $this->CategoriaModel->getOne($id);
+                $data['categoria'] = $this->CategoriaModel->getOne($id_categoria);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormCategoria', $data);
@@ -63,20 +65,20 @@ class Categoria extends CI_Controller {
                 $data = array(
                     'nome_categoria' => $this->input->post('nome_categoria')
                 );
-                if ($this->CategoriaModel->update($id, $data)) {
+                if ($this->CategoriaModel->update($id_categoria, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
                     redirect('Categoria/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Categoria/alterar/' . $id);
+                    redirect('Categoria/alterar/' . $id_categoria);
                 }
             }
         }
     }
 
-    public function deletar($id) {
-        if ($id > 0) {
-            if ($this->CategoriaModel->delete($id > 0)) {
+    public function deletar($id_categoria) {
+        if ($id_categoria > 0) {
+            if ($this->CategoriaModel->delete($id_categoria > 0)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

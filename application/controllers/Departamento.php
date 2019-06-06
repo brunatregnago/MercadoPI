@@ -38,7 +38,7 @@ class Departamento extends CI_Controller {
                 'nome_departamento' => $this->input->post('nome_departamento')
             );
 
-            if ($this->DepartamentoModel->inserir($data)) {
+            if ($this->DepartamentoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Departamento/lista');
             } else {
@@ -48,13 +48,13 @@ class Departamento extends CI_Controller {
         }
     }
 
-    public function alterar($id) {
-        if ($id > 0) {
+    public function alterar($id_departamento) {
+        if ($id_departamento > 0) {
 
             $this->form_validation->set_rules('nome_departamento', 'nome_departamento', 'required');
 
             if ($this->form_validation->run() == false) {
-                $data['departamento'] = $this->DepartamentoModel->getOne($id);
+                $data['departamento'] = $this->DepartamentoModel->getOne($id_departamento);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormDepartamento', $data);
@@ -63,20 +63,20 @@ class Departamento extends CI_Controller {
                 $data = array(
                     'nome_departamento' => $this->input->post('nome_departamento')
                 );
-                if ($this->DepartamentoModel->update($id, $data)) {
+                if ($this->DepartamentoModel->update($id_departamento, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
                     redirect('Departamento/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Departamento/alterar/' . $id);
+                    redirect('Departamento/alterar/' . $id_departamento);
                 }
             }
         }
     }
 
-    public function deletar($id) {
-        if ($id > 0) {
-            if ($this->DepartamentoModel->delete($id > 0)) {
+    public function deletar($id_departamento) {
+        if ($id_departamento > 0) {
+            if ($this->DepartamentoModel->delete($id_departamento > 0)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

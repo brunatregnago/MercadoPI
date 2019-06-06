@@ -23,11 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 $config['base_url'] = 'http://127.0.0.1/MercadoPI/index.php';
-=======
-$config['base_url'] = 'http://127.0.0.1/Mercado/';
->>>>>>> 917518a372c34cc234f45ef4def09440343deede
 
 /*
 |--------------------------------------------------------------------------

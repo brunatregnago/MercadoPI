@@ -8,21 +8,21 @@ class DepartamentoModel extends CI_Model {
         return $query->result();
     }
 
-    public function insert() {
+    public function insert($data = array()) {
         $this->db->insert('tb_departamento', $data);
         return $this->db->affected_rows();
     }
 
-    public function getOne($id) {
-        $this->db->where('id_departamento', $id);
+    public function getOne($id_departamento) {
+        $this->db->where('id_departamento', $id_departamento);
         $query = $this->db->get('tb_departamento');
         return $query->row(0);
     }
 
-    public function update($id, $data = array()) {
-        if ($id > 0) {
+    public function update($id_departamento, $data = array()) {
+        if ($id_departamento > 0) {
             //filtra o cliente que será alterado 
-            $this->db->where('id_departamento', $id);
+            $this->db->where('id_departamento', $id_departamento);
             //altera os dados de acordo com o recebido por parametro
             $this->db->update('tb_departamento', $data);
             //retorno do número de linhas afetadas
@@ -32,9 +32,9 @@ class DepartamentoModel extends CI_Model {
         }
     }
 
-    public function delete($id) {
-        if ($id > 0) {
-            $this->db->where('id_departamento', $id);
+    public function delete($id_departamento) {
+        if ($id_departamento > 0) {
+            $this->db->where('id_departamento', $id_departamento);
             $this->db->delete('tb_departamento');
 
             return $this->db->affected_rows();
