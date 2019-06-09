@@ -3,6 +3,7 @@
     <div class="form-row">
         <div class="form-group col-md-9">
             <input type="hidden" name="id" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
+            
             <label for="departamento">Departamento</label>
             <select id="id_departamento" class="form-control" name="id_departamento">
                 <option selected>Selecione o departamento</option>
@@ -40,16 +41,16 @@
     <div class="form-row">
         <div class="form-group col-md-9">
             <label for="nomeproduto">Descrição</label>
-            <input type="text" class="form-control" id="nome_produto" placeholder="">
+            <input type="text" class="form-control" id="nome_produto" placeholder="" name="nome_produto" value="<?= (isset($produto)) ? $produto->nome_produto : ''; ?>">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="valor">Preço</label>
-            <input type="text" class="form-control" id="valor_unitario_produto" placeholder="">
+            <input type="text" class="form-control" id="valor_unitario_produto" name="valor_unitario_produto"  placeholder="" value="<?= (isset($produto)) ? $produto->valor_unitario_produto : ''; ?>">
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-5">
             <label for="medida_valor">Unidade do preço</label>
             <select id="medida_valor" class="form-control" name="medida_valor">
-                <option selected>Unidade de medida</option>
+                <option selected>Selecione a unidade de medida</option>
                 <?php
                     foreach ($medida_valor as $mval) {
                         echo '<option value="' . $mval->medida_valor . '">' . $mval->medida_valor . '</option>';
@@ -57,14 +58,14 @@
                     ?>
             </select>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="peso">Peso</label>
-            <input type="text" class="form-control" id="peso_produto" placeholder="">
+            <input type="text" class="form-control" id="peso_produto" placeholder="" name="peso_produto" value="<?= (isset($produto)) ? $produto->peso_produto : ''; ?>">
         </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-5">
         <label for="unidade_medida">Unidade de medida</label>
-        <select id="unidade_medida" class="form-control">
-            <option selected>Unidade do peso</option>
+        <select id="unidade_medida" name="unidade_medida" class="form-control">
+            <option selected>Selecione a unidade do peso</option>
             <?php
                     foreach ($unidade_medida as $uni) {
                         echo '<option value="' . $uni->id_medida . '">' . $uni->medida . '</option>';
