@@ -13,9 +13,9 @@
                     echo '<tr>';
                     echo '<td>' . $sub->nome_subcategoria . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Subcategoria/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Subcategoria/alterar/'
                     . $sub->id_subcategoria . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Subcategoria/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'Subcategoria/deletar/'
                     . $sub->id_subcategoria . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

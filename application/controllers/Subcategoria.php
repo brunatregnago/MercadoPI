@@ -39,7 +39,7 @@ class Subcategoria extends CI_Controller {
         } else {
 
             $data = array(
-                'id_categoria' => $this->input->post('id_categoria'),
+                'cd_categoria' => $this->input->post('id_categoria'),
                 'nome_subcategoria' => $this->input->post('nome_subcategoria')
             );
 
@@ -54,12 +54,15 @@ class Subcategoria extends CI_Controller {
     }
 
     public function alterar($id_subcategoria) {
+        
         if ($id_subcategoria > 0) {
 
             $this->form_validation->set_rules('id_categoria', 'id_categoria', 'required');
             $this->form_validation->set_rules('nome_subcategoria', 'nome_subcategoria', 'required');
 
             if ($this->form_validation->run() == false) {
+                
+                $data['categoria'] = $this->CategoriaModel->getAll();
                 $data['subcategoria'] = $this->SubcategoriaModel->getOne($id_subcategoria);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralProduto');
@@ -67,7 +70,7 @@ class Subcategoria extends CI_Controller {
                 //$this->load->view('Footer');
             } else {
                 $data = array(
-                    'id_categoria' => $this->input->post('id_categoria'),
+                    'cd_categoria' => $this->input->post('id_categoria'),
                     'nome_subcategoria' => $this->input->post('nome_subcategoria')
                 );
                 if ($this->SubcategoriaModel->update($id_subcategoria, $data)) {
