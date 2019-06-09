@@ -2,7 +2,7 @@
 <form class="col-md-9 mt-5">
     <div class="form-row">
         <div class="form-group col-md-9">
-            <input type="hidden" name="id" value="<?= (isset($prova)) ? $prova->id_prova : ''; ?>">
+            <input type="hidden" name="id" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
             <label for="departamento">Departamento</label>
             <select id="id_departamento" class="form-control" name="id_departamento">
                 <option selected>Selecione o departamento</option>

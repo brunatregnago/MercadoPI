@@ -38,7 +38,7 @@ class Pais extends CI_Controller {
                 'nome_pais' => $this->input->post('nome_pais')
             );
 
-            if ($this->PaisModel->inserir($data)) {
+            if ($this->PaisModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Pais/lista');
             } else {
@@ -48,8 +48,8 @@ class Pais extends CI_Controller {
         }
     }
 
-    public function alterar($id) {
-        if ($id > 0) {
+    public function alterar($id_pais) {
+        if ($id_pais > 0) {
 
             $this->form_validation->set_rules('nome_pais', 'nome_pais', 'required');
 
@@ -63,20 +63,20 @@ class Pais extends CI_Controller {
                 $data = array(
                     'nome_pais' => $this->input->post('nome_pais')
                 );
-                if ($this->PaisModel->update($id, $data)) {
+                if ($this->PaisModel->update($id_pais, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
                     redirect('Pais/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Pais/alterar/' . $id);
+                    redirect('Pais/alterar/' . $id_pais);
                 }
             }
         }
     }
 
-    public function deletar($id) {
-        if ($id > 0) {
-            if ($this->PaisModel->delete($id > 0)) {
+    public function deletar($id_pais) {
+        if ($id_pais > 0) {
+            if ($this->PaisModel->delete($id_pais > 0)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

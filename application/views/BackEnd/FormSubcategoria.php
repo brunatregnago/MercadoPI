@@ -1,16 +1,21 @@
 
-<form>
-    <div class="form-group col-md-4">
-        <div class="form-group col-md-4">
+<form action="" class="col-md-9" method="POST">
+    <div class="form-group col-md-9">
+        <div class="form-group col-md-9">
+            <input type="hidden" name="id_subcategoria" value="<?= (isset($subcagoria)) ? $subcategoria->id_subcategoria : ''; ?>">
             <label for="categoria">Categoria</label>
-            <select id="categoria" class="form-control">
+            <select id="categoria" class="form-control" >
                 <option selected>Categoria</option>
-                <option></option>
+                <?php
+                foreach ($categoria as $cat) {
+                    echo '<option value="' . $cat->id_categoria . '">' . $cat->nome_categoria . '</option>';
+                }
+                ?>
             </select>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-9">
             <label for="subcategoria">Subcategoria</label>
-            <input type="text" class="form-control" id="subcategoria" placeholder="">
+            <input type="text" class="form-control" id="id_subcategoria" name="id_subcategoria" placeholder="" value="">
         </div>
         
         <button type="submit" class="btn btn-success mb-2">Salvar</button>

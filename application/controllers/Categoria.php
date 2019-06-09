@@ -10,6 +10,8 @@ class Categoria extends CI_Controller {
         //$this->LoginModel->verificaLogin();
 
         $this->load->model('BackEndModels/CategoriaModel');
+
+        $this->load->model('BackEndModels/DepartamentoModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -25,18 +27,19 @@ class Categoria extends CI_Controller {
     }
 
     public function cadastro() {
+        $this->form_validation->set_rules('id_departamento', 'id_departamento', 'required');
         $this->form_validation->set_rules('nome_categoria', 'nome_categoria', 'required');
 
         if ($this->form_validation->run() == false) {
-            $this->load->model('DepartamentoModel');
             $data['departamento'] = $this->DepartamentoModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/HeaderLateralProduto');
-            $this->load->view('BackEnd/FormCategoria');
+            $this->load->view('BackEnd/FormCategoria', $data);
             //$this->load->view('Footer');
         } else {
 
             $data = array(
+                'cd_departamento' => $this->input->post('id_departamento'),
                 'nome_categoria' => $this->input->post('nome_categoria')
             );
 
@@ -53,9 +56,12 @@ class Categoria extends CI_Controller {
     public function alterar($id_categoria) {
         if ($id_categoria > 0) {
 
+            $this->form_validation->set_rules('id_departamento', 'id_departamento', 'required');
             $this->form_validation->set_rules('nome_categoria', 'nome_categoria', 'required');
 
             if ($this->form_validation->run() == false) {
+
+                $data['departamento'] = $this->DepartamentoModel->getAll();
                 $data['categoria'] = $this->CategoriaModel->getOne($id_categoria);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralProduto');
@@ -63,6 +69,7 @@ class Categoria extends CI_Controller {
                 //$this->load->view('Footer');
             } else {
                 $data = array(
+                    'cd_departamento' => $this->input->post('id_departamento'),
                     'nome_categoria' => $this->input->post('nome_categoria')
                 );
                 if ($this->CategoriaModel->update($id_categoria, $data)) {

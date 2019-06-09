@@ -37,7 +37,7 @@ class Bairro extends CI_Controller {
                 'nome_bairro' => $this->input->post('nome_bairro')
             );
 
-            if ($this->BairroModel->inserir($data)) {
+            if ($this->BairroModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Bairro/lista');
             } else {

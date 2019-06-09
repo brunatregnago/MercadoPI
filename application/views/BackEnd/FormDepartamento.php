@@ -4,7 +4,7 @@
     <div class="form-group mt-5">
         <div class="form-row">
             <div class="form-group col-10">
-                <input type="hidden" name="id" value="<?= (isset($departamento)) ? $departamento->id_departamento : ''; ?>">
+                <input type="hidden" name="id_departamento" value="<?= (isset($departamento)) ? $departamento->id_departamento : ''; ?>">
                 <label for="departamento">Departamento</label>
                 <input type="text" class="form-control" id="nome_departamento" name="nome_departamento" placeholder="" value="<?= (isset($departamento)) ? $departamento->nome_departamento : ''; ?>">
             </div>

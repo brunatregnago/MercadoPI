@@ -10,6 +10,7 @@ class Estado extends CI_Controller {
         //$this->LoginModel->verificaLogin();
 
         $this->load->model('BackEndModels/EstadoModel');
+        $this->load->model('BackEndModels/PaisModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -25,20 +26,23 @@ class Estado extends CI_Controller {
     }
 
     public function cadastro() {
+        $this->form_validation->set_rules('id_pais', 'id_pais', 'required');
         $this->form_validation->set_rules('nome_estado', 'nome_estado', 'required');
 
         if ($this->form_validation->run() == false) {
+            $data['id_pais'] = $this->PaisModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/HeaderLateralEntrega');
-            $this->load->view('BackEnd/FormEstado');
+            $this->load->view('BackEnd/FormEstado', $data);
             //$this->load->view('Footer');
         } else {
 
             $data = array(
+                'cd_pais' => $this->input->post('id_pais'),
                 'nome_estado' => $this->input->post('nome_estado')
             );
 
-            if ($this->EstadoModel->inserir($data)) {
+            if ($this->EstadoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Estado/lista');
             } else {
@@ -48,35 +52,36 @@ class Estado extends CI_Controller {
         }
     }
 
-    public function alterar($id) {
-        if ($id > 0) {
-
+    public function alterar($id_estado) {
+        if ($id_estado > 0) {
+            $this->form_validation->set_rules('id_pais', 'id_pais', 'required');
             $this->form_validation->set_rules('nome_estado', 'nome_estado', 'required');
 
             if ($this->form_validation->run() == false) {
-                $data['estado'] = $this->EstadoModel->getOne($id);
+                $data['estado'] = $this->EstadoModel->getOne($id_estado);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormEstado', $data);
                 //$this->load->view('Footer');
             } else {
                 $data = array(
+                    'id_pais' => $this->input->post('cd_pais'),
                     'nome_estado' => $this->input->post('nome_estado')
                 );
-                if ($this->EstadoModel->update($id, $data)) {
+                if ($this->EstadoModel->update($id_estado, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
                     redirect('Estado/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Estado/alterar/' . $id);
+                    redirect('Estado/alterar/' . $id_estado);
                 }
             }
         }
     }
 
-    public function deletar($id) {
-        if ($id > 0) {
-            if ($this->EstadoModel->delete($id > 0)) {
+    public function deletar($id_estado) {
+        if ($id_estado > 0) {
+            if ($this->EstadoModel->delete($id_estado > 0)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

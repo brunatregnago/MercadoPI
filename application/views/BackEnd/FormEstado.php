@@ -1,16 +1,21 @@
 
-<form>
-    <div class="form-group col-md-4">
-        <div class="form-group col-md-4">
+<form action="" class="col-md-9" method="POST">
+    <div class="form-group col-md-9">
+        <div class="form-group col-md-9">
+             <input type="hidden" name="id_estado" value="<?= (isset($estado)) ? $estado->id_estado : ''; ?>">
             <label for="pais">País</label>
-            <select id="pais" class="form-control">
+            <select id="id_pais" name="id_pais" class="form-control">
                 <option selected>País</option>
-                <option></option>
+                <?php
+                foreach ($pais as $p) {
+                    echo '<option value="' . $p->id_pais . '">' . $p->nome_pais. '</option>';
+                }
+                ?>
             </select>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-9">
             <label for="estado">Estado</label>
-            <input type="text" class="form-control" id="nome_estado" placeholder="">
+            <input type="text" class="form-control" id="nome_estado" name="nome_estado" placeholder=""value="<?= (isset($estado)) ? $estado->nome_estado : ''; ?>">
         </div>
         <button type="submit" class="btn btn-success mb-2">Salvar</button>
         <button type="reset" class="btn btn-secondary mb-2">Cancelar</button>
