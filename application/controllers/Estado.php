@@ -30,7 +30,7 @@ class Estado extends CI_Controller {
         $this->form_validation->set_rules('nome_estado', 'nome_estado', 'required');
 
         if ($this->form_validation->run() == false) {
-            $data['id_pais'] = $this->PaisModel->getAll();
+            $data['pais'] = $this->PaisModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/HeaderLateralEntrega');
             $this->load->view('BackEnd/FormEstado', $data);
@@ -58,6 +58,7 @@ class Estado extends CI_Controller {
             $this->form_validation->set_rules('nome_estado', 'nome_estado', 'required');
 
             if ($this->form_validation->run() == false) {
+                $data['pais'] = $this->PaisModel->getAll();                
                 $data['estado'] = $this->EstadoModel->getOne($id_estado);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralEntrega');
@@ -65,7 +66,7 @@ class Estado extends CI_Controller {
                 //$this->load->view('Footer');
             } else {
                 $data = array(
-                    'id_pais' => $this->input->post('cd_pais'),
+                    'cd_pais' => $this->input->post('id_pais'),
                     'nome_estado' => $this->input->post('nome_estado')
                 );
                 if ($this->EstadoModel->update($id_estado, $data)) {

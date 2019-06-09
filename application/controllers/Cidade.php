@@ -8,7 +8,7 @@ class Cidade extends CI_Controller {
         parent::__construct();
         //$this->load->model('LoginModel');
         //$this->LoginModel->verificaLogin();
-
+        $this->load->model('BackEndModels/EstadoModel');
         $this->load->model('BackEndModels/CidadeModel');
     }
 
@@ -25,20 +25,23 @@ class Cidade extends CI_Controller {
     }
 
     public function cadastro() {
+        $this->form_validation->set_rules('id_estado', 'id_estado', 'required');
         $this->form_validation->set_rules('nome_cidade', 'nome_cidade', 'required');
 
         if ($this->form_validation->run() == false) {
+            $data['estado'] = $this->EstadoModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/HeaderLateralEntrega');
-            $this->load->view('BackEnd/FormCidade');
+            $this->load->view('BackEnd/FormCidade', $data);
             //$this->load->view('Footer');
         } else {
 
             $data = array(
+                'cd_estado' => $this->input->post('id_estado'),
                 'nome_cidade' => $this->input->post('nome_cidade')
             );
 
-            if ($this->CidadeModel->inserir($data)) {
+            if ($this->CidadeModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('Cidade/lista');
             } else {
@@ -48,35 +51,38 @@ class Cidade extends CI_Controller {
         }
     }
 
-    public function alterar($id) {
-        if ($id > 0) {
+    public function alterar($id_cidade) {
+        if ($id_cidade > 0) {
 
+            $this->form_validation->set_rules('id_estado', 'id_estado', 'required');
             $this->form_validation->set_rules('nome_cidade', 'nome_cidade', 'required');
 
             if ($this->form_validation->run() == false) {
-                $data['cidade'] = $this->CidadeModel->getOne($id);
+                $data['estado'] = $this->EstadoModel->getAll();
+                $data['cidade'] = $this->CidadeModel->getOne($id_cidade);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormCidade', $data);
                 //$this->load->view('Footer');
             } else {
                 $data = array(
+                    'cd_estado' => $this->input->post('id_estado'),
                     'nome_cidade' => $this->input->post('nome_cidade')
                 );
-                if ($this->CidadeModel->update($id, $data)) {
+                if ($this->CidadeModel->update($id_cidade, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
                     redirect('Cidade/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Cidade/alterar/' . $id);
+                    redirect('Cidade/alterar/' . $id_cidade);
                 }
             }
         }
     }
 
-    public function deletar($id) {
-        if ($id > 0) {
-            if ($this->CidadeModel->delete($id > 0)) {
+    public function deletar($id_cidade) {
+        if ($id_cidade > 0) {
+            if ($this->CidadeModel->delete($id_cidade > 0)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

@@ -1,6 +1,6 @@
 <?php
 
-class PaisModel extends CI_Model {
+class CidadeModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
@@ -8,21 +8,21 @@ class PaisModel extends CI_Model {
         return $query->result();
     }
     
-    public function insert() {
+    public function insert($data = array()) {
       $this->db->insert('tb_cidade', $data);
         return $this->db->affected_rows();
     }
 
-    public function getOne($id) {
-        $this->db->where('id', $id);
+    public function getOne($id_cidade) {
+        $this->db->where('id_cidade', $id_cidade);
         $query = $this->db->get('tb_cidade');
         return $query->row(0);
     }
 
-    public function update($id, $data = array()) {
-        if ($id > 0) {
+    public function update($id_cidade, $data = array()) {
+        if ($id_cidade > 0) {
             //filtra o cliente que será alterado 
-            $this->db->where('id', $id);
+            $this->db->where('id_cidade', $id_cidade);
             //altera os dados de acordo com o recebido por parametro
             $this->db->update('tb_cidade', $data);
             //retorno do número de linhas afetadas
@@ -32,9 +32,9 @@ class PaisModel extends CI_Model {
         }
     }
 
-    public function delete($id) {
-        if ($id > 0) {
-            $this->db->where('id', $id);
+    public function delete($id_cidade) {
+        if ($id_cidade > 0) {
+            $this->db->where('id_cidade', $id_cidade);
             $this->db->delete('tb_cidade');
 
             return $this->db->affected_rows();
