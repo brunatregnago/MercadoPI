@@ -31,7 +31,7 @@ class Promocao extends CI_Controller {
 
         if ($this->form_validation->run() == false) {
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/FormPromocao', $data);
+            $this->load->view('BackEnd/FormPromocao');
             //$this->load->view('Footer');
         } else {
 
@@ -39,7 +39,7 @@ class Promocao extends CI_Controller {
                 'nome_promocao' => $this->input->post('nome_promocao'),
                 'inicio_promocao' => $this->input->post('inicio_promocao'),
                 'fim_promocao' => $this->input->post('fim_promocao'),
-                'porcento_desconto' => $this->input->post('oorcento_desconto')
+                'porcento_desconto' => $this->input->post('porcento_desconto')
             );
 
             if ($this->PromocaoModel->insert($data)) {

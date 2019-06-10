@@ -19,7 +19,6 @@ class Departamento extends CI_Controller {
     public function lista() {
         $data['departamento'] = $this->DepartamentoModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralProduto');
         $this->load->view('BackEnd/ListaDepartamento', $data);
         //$this->load->view('Footer');
     }
@@ -29,7 +28,6 @@ class Departamento extends CI_Controller {
 
         if ($this->form_validation->run() == false) {
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralProduto');
             $this->load->view('BackEnd/FormDepartamento');
             //$this->load->view('Footer');
         } else {

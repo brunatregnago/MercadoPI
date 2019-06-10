@@ -1,7 +1,7 @@
 
-<form method="POST" action="" class="col-9 mt-5">
-    <div class="form-group col-md-9">
-        <div class="form-group col-md-9">
+<form method="POST" action="" class="col-8 mt-5">
+    <div class="form-group col-md-10">
+        <div class="form-group">
             <input type="hidden" name="id_cidade" value="<?= (isset($cidade)) ? $cidade->id_cidade : ''; ?>">
             
             <label for="estado">Estado</label>
@@ -14,7 +14,7 @@
                 ?>
             </select>
         </div>
-        <div class="form-group col-md-9">
+        <div class="form-group">
             <label for="cidade">Cidade</label>
             <input type="text" class="form-control" id="nome_cidade" name="nome_cidade" placeholder="" value="<?= (isset($cidade)) ? $cidade->nome_cidade : ''; ?>">
         </div>

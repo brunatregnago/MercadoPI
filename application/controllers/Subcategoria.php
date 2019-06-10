@@ -31,10 +31,8 @@ class Subcategoria extends CI_Controller {
 
         if ($this->form_validation->run() == false) {
             $data['categoria'] = $this->CategoriaModel->getAll();
-            $data['subcategoria'] = $this->SubcategoriaModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralProduto');
-            $this->load->view('BackEnd/FormSubcategoria', $data);
+            $this->load->view('BackEnd/FormSubcategoria');
             //$this->load->view('Footer');
         } else {
 

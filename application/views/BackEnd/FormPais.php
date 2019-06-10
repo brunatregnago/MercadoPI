@@ -1,7 +1,7 @@
 
-<form action="" class="col-md-9" method="POST">
-    <div class="form-group col-md-4">
-        <div class="form-group col-md-6">
+<form action="" class="col-md-8 mt-5" method="POST">
+    <div class="form-group col-md-10">
+        <div class="form-group">
              <input type="hidden" name="id_pais" value="<?= (isset($pais)) ? $pais->id_pais : ''; ?>">
             <label for="pais">País</label>
             <input type="text" class="form-control" id="nome_pais" name="nome_pais" placeholder="" value="<?= (isset($pais)) ? $pais->nome_pais : ''; ?>">

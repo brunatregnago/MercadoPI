@@ -1,6 +1,6 @@
 
-    <div class=" table-responsive col-9 mt-5">
-        <table class="table table-striped table-bordered" id="table" style="text-align: center;">
+    <div class=" table-responsive col-8 mt-5">
+        <table class="table table-striped table-bordered col-md-10" id="table" style="text-align: center;">
             <thead>
                 <tr>
                     <th> Departamento </th>
