@@ -20,7 +20,7 @@ class Pais extends CI_Controller {
         $data['pais'] = $this->PaisModel->getAll();
         $this->load->view('BackEnd/Header');
         $this->load->view('BackEnd/HeaderLateralEntrega');
-        $this->load->view('BackEnd/ListaEntrega', $data);
+        $this->load->view('BackEnd/ListaPais', $data);
         //$this->load->view('Footer');
     }
 

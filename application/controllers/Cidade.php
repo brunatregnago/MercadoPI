@@ -20,7 +20,7 @@ class Cidade extends CI_Controller {
         $data['cidade'] = $this->CidadeModel->getAll();
         $this->load->view('BackEnd/Header');
         $this->load->view('BackEnd/HeaderLateralEntrega');
-        $this->load->view('BackEnd/ListaEntrega', $data);
+        $this->load->view('BackEnd/ListaCidade', $data);
         //$this->load->view('Footer');
     }
 

@@ -19,7 +19,7 @@ class Bairro extends CI_Controller {
         $data['bairro'] = $this->BairroModel->getAll();
         $this->load->view('BackEnd/Header');
         $this->load->view('BackEnd/HeaderLateralEntrega');
-        $this->load->view('BackEnd/ListaEntrega', $data);
+        $this->load->view('BackEnd/ListaBairro', $data);
         //$this->load->view('Footer');
     }
 

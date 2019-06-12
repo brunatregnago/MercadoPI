@@ -1,7 +1,7 @@
 
-<form method="POST" action="" class="col-8 mt-5">
-    <div class="form-group col-9">
-        <div class="form-group col-md-9">
+<form method="POST" action="" class="col-9 mt-5">
+    <div class="form-group col-10">
+        <div class="form-group">
             <input type="hidden" name="id_subcategoria" id="id_subcategoria" value="<?= (isset($subcategoria)) ? $subcategoria->id_subcategoria : ''; ?>">
             
             <label for="categoria">Categoria</label>
@@ -14,7 +14,7 @@
                 ?>
             </select>
         </div>
-        <div class="form-group col-md-9">
+        <div class="form-group">
             <label for="subcategoria">Subcategoria</label>
             <input type="text" class="form-control" id="nome_subcategoria" placeholder="" name="nome_subcategoria" placeholder="" value="<?= (isset($subcategoria)) ? $subcategoria->nome_subcategoria : ''; ?>">
         </div>

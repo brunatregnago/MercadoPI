@@ -1,7 +1,6 @@
-<div class="container">
-    <br>
-    <div class=" table-responsive">
-        <table class="table table-striped table-bordered" id="table" style="text-align: center;">
+
+    <div class=" table-responsive col-9 mt-5">
+        <table class="table table-striped table-bordered col-md-10" id="table" style="text-align: center;">
             <thead>
                 <tr>
                     <th> Imagem </th>
@@ -25,9 +24,9 @@
                     echo '<td>' . $p->peso_produto . '</td>';
                     echo '<td>' . $p->valor_unitario_produto . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Prova/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Produto/alterar/'
                     . $p->id_produto . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Prova/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'Produto/deletar/'
                     . $p->id_produto . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

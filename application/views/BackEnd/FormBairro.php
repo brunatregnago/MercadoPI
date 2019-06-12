@@ -1,8 +1,8 @@
 
-<form method="POST" action="" class="col-8 mt-5">
+<form method="POST" action="" class="col-9 mt-5">
     <div class="form-group col-md-10">
         <div class="form-group">
-            <input type="hidden" name="id_bairro" value="<?= (isset($bairro)) ? $cidade->id_bairro : ''; ?>">
+            <input type="hidden" name="id_bairro" value="<?= (isset($bairro)) ? $bairro->id_bairro : ''; ?>">
             
             <label for="cidade">Cidade</label>
             <select id="id_cidade" name="id_cidade" class="form-control">
