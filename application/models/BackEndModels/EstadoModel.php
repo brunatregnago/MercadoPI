@@ -4,6 +4,8 @@ class EstadoModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
+        $this->db->select('tb_pais.nome_pais as pais,tb_estado.*');
+        $this->db->join('tb_pais', 'tb_pais.id_pais = tb_estado.cd_pais', 'left');
         $query = $this->db->get('tb_estado');
         return $query->result();
     }

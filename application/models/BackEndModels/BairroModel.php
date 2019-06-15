@@ -4,6 +4,9 @@ class BairroModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
+        $this->db->select('tb_cidade.nome_cidade as cidade,tb_estado.nome_estado as estado,tb_bairro.*');
+        $this->db->join('tb_cidade', 'tb_cidade.id_cidade = tb_bairro.cd_cidade', 'left');
+         $this->db->join('tb_estado', 'tb_estado.id_estado = tb_cidade.cd_estado', 'left');
         $query = $this->db->get('tb_bairro');
         return $query->result();
     }

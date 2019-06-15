@@ -3,6 +3,7 @@
         <table class="table table-striped table-bordered col-md-10" id="table" style="text-align: center;">
             <thead>
                 <tr>
+                    <th> Categoria </th>
                     <th> Subcategoria </th>
                     <th></th>
                 </tr>
@@ -11,6 +12,7 @@
                 <?php
                 foreach ($subcategoria as $sub) {
                     echo '<tr>';
+                    echo '<td>' . $sub->categoria . '</td>';
                     echo '<td>' . $sub->nome_subcategoria . '</td>';
                     echo '<td>'
                     . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Subcategoria/alterar/'

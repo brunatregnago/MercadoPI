@@ -13,7 +13,7 @@
                 foreach ($bairro as $b) {
                     echo '<tr>';
                     echo '<td>' . $b->nome_bairro . '</td>';
-                    echo '<td>' . $b->cd_cidade . '</td>';
+                    echo '<td>' . $b->cidade . ' - ' . $b->estado. '</td>';
                     echo '<td>'
                     . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Bairro/alterar/'
                     . $b->id_bairro . '"><i class="fas fa-edit"></i></a>'

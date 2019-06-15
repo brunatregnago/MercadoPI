@@ -12,7 +12,7 @@
                 <?php
                 foreach ($categoria as $cat) {
                     echo '<tr>';
-                    echo '<td>' . $cat->cd_departamento . '</td>';
+                    echo '<td>' . $cat->departamento . '</td>';
                     echo '<td>' . $cat->nome_categoria . '</td>';
                     echo '<td>'
                     . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Categoria/alterar/'

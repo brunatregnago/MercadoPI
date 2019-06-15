@@ -13,7 +13,7 @@
                 foreach ($cidade as $cid) {
                     echo '<tr>';
                     echo '<td>' . $cid->nome_cidade . '</td>';
-                    echo '<td>' . $cid->cd_estado . '</td>';
+                    echo '<td>' . $cid->estado . '</td>';
                     echo '<td>'
                     . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Cidade/alterar/'
                     . $cid->id_cidade . '"><i class="fas fa-edit"></i></a>'

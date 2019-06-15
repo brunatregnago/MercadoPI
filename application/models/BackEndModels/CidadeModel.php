@@ -4,6 +4,8 @@ class CidadeModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
+        $this->db->select('tb_estado.nome_estado as estado,tb_cidade.*');
+        $this->db->join('tb_estado', 'tb_estado.id_estado= tb_cidade.cd_estado', 'left');
         $query = $this->db->get('tb_cidade');
         return $query->result();
     }

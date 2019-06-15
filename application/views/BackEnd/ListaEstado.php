@@ -13,7 +13,7 @@
                 foreach ($estado as $es) {
                     echo '<tr>';
                     echo '<td>' . $es->nome_estado . '</td>';
-                    echo '<td>' . $es->cd_pais . '</td>';
+                    echo '<td>' . $es->pais . '</td>';
                     echo '<td>'
                     . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Estado/alterar/'
                     . $es->id_estado . '"><i class="fas fa-edit"></i></a>'

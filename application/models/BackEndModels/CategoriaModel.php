@@ -4,6 +4,8 @@ class CategoriaModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
+        $this->db->select('tb_departamento.nome_departamento as departamento,tb_categoria.*');
+        $this->db->join('tb_departamento', 'tb_departamento.id_departamento = tb_categoria.cd_departamento', 'left');
         $query = $this->db->get('tb_categoria');
         return $query->result();
     }

@@ -18,7 +18,7 @@
                 <?php
                 foreach ($produto as $p) {
                     echo '<tr>';
-                    echo '<td>' . $p->imagem_produto . '</td>';
+                    echo '<button type="button" class="btn btn-light mr-4 mb-3 mt-4 shadow text-center"><img class="img-fluid mb-2" style="max-height:150px; max-width:150px;" src="' . $this->config->base_url() . 'uploads/' . $e->imagem_produto . '">';
                     echo '<td>' . $p->id_produto . '</td>';
                     echo '<td>' . $p->nome_produto . '</td>';
                     echo '<td>' . $p->peso_produto . '</td>';
