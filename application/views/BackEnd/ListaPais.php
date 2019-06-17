@@ -13,9 +13,9 @@
                     echo '<tr>';
                     echo '<td>' . $p->nome_pais . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Pais/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Pais/alterar/'
                     . $p->id_pais . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . '/Pais/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Pais/deletar/'
                     . $p->id_pais . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

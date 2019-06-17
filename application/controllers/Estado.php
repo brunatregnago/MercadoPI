@@ -44,10 +44,10 @@ class Estado extends CI_Controller {
 
             if ($this->EstadoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Estado/lista');
+                redirect('index.php/Estado/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Estado/cadastro');
+                redirect('index.php/Estado/cadastro');
             }
         }
     }
@@ -71,10 +71,10 @@ class Estado extends CI_Controller {
                 );
                 if ($this->EstadoModel->update($id_estado, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Estado/lista');
+                    redirect('index.php/Estado/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Estado/alterar/' . $id_estado);
+                    redirect('index.php/Estado/alterar/' . $id_estado);
                 }
             }
         }
@@ -82,13 +82,13 @@ class Estado extends CI_Controller {
 
     public function deletar($id_estado) {
         if ($id_estado > 0) {
-            if ($this->EstadoModel->delete($id_estado > 0)) {
+            if ($this->EstadoModel->delete($id_estado)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Estado/lista');
+        redirect('index.php/Estado/lista');
     }
 
 }

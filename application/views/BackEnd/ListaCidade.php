@@ -15,9 +15,9 @@
                     echo '<td>' . $cid->nome_cidade . '</td>';
                     echo '<td>' . $cid->estado . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Cidade/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Cidade/alterar/'
                     . $cid->id_cidade . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . '/Cidade/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Cidade/deletar/'
                     . $cid->id_cidade . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

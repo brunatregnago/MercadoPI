@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Mercado</title>
-        <link href="Style.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= $this->config->base_url() ?>cssStyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <style>
@@ -22,39 +22,39 @@
                 <div class="text-white mt-4 text-center">Sistema do Mercado</div>
                 <ul class="nav flex-column justify-content-center">
                     <li class="nav-item mt-4">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Promocao/cadastro'; ?>">Promoção</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Promocao/cadastro'; ?>">Promoção</a>
                         <hr>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Produto/lista'; ?>">Produto</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>">Produto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Departamento/lista'; ?>">Departamento</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Departamento/lista'; ?>">Departamento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Categoria/lista'; ?>">Categoria</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Categoria/lista'; ?>">Categoria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Subcategoria/lista'; ?>">Subcategoria</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Subcategoria/lista'; ?>">Subcategoria</a>
                         <hr>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Pais/lista'; ?>">Entrega</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Pais/lista'; ?>">Entrega</a>
                         <hr>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Pais/lista'; ?>">País</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Pais/lista'; ?>">País</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Estado/lista'; ?>">Estado</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Estado/lista'; ?>">Estado</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Cidade/lista'; ?>">Cidade</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Cidade/lista'; ?>">Cidade</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'Bairro/lista'; ?>">Bairro</a>
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Bairro/lista'; ?>">Bairro</a>
                         <hr>
                     </li>
                     <li class="nav-item md-5">

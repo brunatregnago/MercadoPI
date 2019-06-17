@@ -1,18 +1,21 @@
+.headerone{
+    background-color: #F3F1F1;
+}
+.headerone a{
+    color: #939090;
+    font-size: 80%;
+}
+.headerone a:hover{
+    color: #000000;
+}
+.headertwo{
+    background-color: white;
+}
 .cabecalho{
     background-color: white;
     height: 90px;
     line-height: 90px;
     text-align: center;
-}
-.logo{
-    margin: -32px 0 0 -30px;
-}
-.cabecalho input{
-    border-radius: 20px;
-    margin: 3.5% 0 0 18%;
-}
-nav{
-    background-color: #00802b;
 }
 .menu ul li a{
     text-decoration: none;

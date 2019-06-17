@@ -32,7 +32,7 @@ class Subcategoria extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['categoria'] = $this->CategoriaModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/FormSubcategoria');
+            $this->load->view('BackEnd/FormSubcategoria', $data);
             //$this->load->view('Footer');
         } else {
 
@@ -43,10 +43,10 @@ class Subcategoria extends CI_Controller {
 
             if ($this->SubcategoriaModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Subcategoria/lista');
+                redirect('index.php/Subcategoria/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Subcategoria/cadastro');
+                redirect('index.php/Subcategoria/cadastro');
             }
         }
     }
@@ -73,10 +73,10 @@ class Subcategoria extends CI_Controller {
                 );
                 if ($this->SubcategoriaModel->update($id_subcategoria, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Subcategoria/lista');
+                    redirect('index.php/Subcategoria/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Subcategoria/alterar/' . $id_subcategoria);
+                    redirect('index.php/Subcategoria/alterar/' . $id_subcategoria);
                 }
             }
         }
@@ -84,13 +84,13 @@ class Subcategoria extends CI_Controller {
 
     public function deletar($id_subcategoria) {
         if ($id_subcategoria > 0) {
-            if ($this->SubcategoriaModel->delete($id_subcategoria > 0)) {
+            if ($this->SubcategoriaModel->delete($id_subcategoria)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Subcategoria/lista');
+        redirect('index.php/Subcategoria/lista');
     }
 
 }

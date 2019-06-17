@@ -15,9 +15,9 @@
                     echo '<td>' . $cat->departamento . '</td>';
                     echo '<td>' . $cat->nome_categoria . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Categoria/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Categoria/alterar/'
                     . $cat->id_categoria . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'Categoria/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Categoria/deletar/'
                     . $cat->id_categoria . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

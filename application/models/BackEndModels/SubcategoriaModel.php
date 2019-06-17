@@ -4,7 +4,7 @@ class SubcategoriaModel extends CI_Model {
     
     public function getAll() {
         //nome da tabela no DB
-        $this->db->select('tb_categoria.nome_categoria as categoria,tb_subcategoria.*');
+        $this->db->select('tb_categoria.nome_categoria as categoria,tb_categoria.id_categoria as id_categoria,tb_subcategoria.*');
         $this->db->join('tb_categoria', 'tb_categoria.id_categoria = tb_subcategoria.cd_categoria', 'left');
         $query = $this->db->get('tb_subcategoria');
         return $query->result();

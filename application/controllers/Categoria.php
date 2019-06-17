@@ -33,7 +33,6 @@ class Categoria extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['departamento'] = $this->DepartamentoModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralProduto');
             $this->load->view('BackEnd/FormCategoria', $data);
             //$this->load->view('Footer');
         } else {
@@ -45,10 +44,10 @@ class Categoria extends CI_Controller {
 
             if ($this->CategoriaModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Categoria/lista');
+                redirect('index.php/Categoria/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Categoria/cadastro');
+                redirect('index.php/Categoria/cadastro');
             }
         }
     }
@@ -74,10 +73,10 @@ class Categoria extends CI_Controller {
                 );
                 if ($this->CategoriaModel->update($id_categoria, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Categoria/lista');
+                    redirect('index.php/Categoria/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Categoria/alterar/' . $id_categoria);
+                    redirect('index.php/Categoria/alterar/' . $id_categoria);
                 }
             }
         }
@@ -85,13 +84,13 @@ class Categoria extends CI_Controller {
 
     public function deletar($id_categoria) {
         if ($id_categoria > 0) {
-            if ($this->CategoriaModel->delete($id_categoria > 0)) {
+            if ($this->CategoriaModel->delete($id_categoria)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Categoria/lista');
+        redirect('index.php/Categoria/lista');
     }
 
 }

@@ -6,14 +6,12 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li><a href="">
-                            Promoções
-                        </a></li>
-                        <?php
-                        ?>
-                    <li><a href="">
-                    Departamento
-                        </a></li>
+                    <li><a href="">Promoções</a></li>
+                    <?php
+                    foreach ($menu as $m) {
+                        echo '<li><a href="">' . $m->departamento . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

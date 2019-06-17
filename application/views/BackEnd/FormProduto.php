@@ -73,7 +73,7 @@
                 ?>
             </select>
         </div>
-
+<!--
         <div class="form-group">
             <div class="input-group mb-3">
                 <div class="custom-file">
@@ -82,11 +82,11 @@
                 </div>
             </div>
         </div>
-
-        <?php
+-->
+        <?php/**
         if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
             echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
-        }
+        }**/
         ?>
     </div>
 

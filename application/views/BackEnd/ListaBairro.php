@@ -15,9 +15,9 @@
                     echo '<td>' . $b->nome_bairro . '</td>';
                     echo '<td>' . $b->cidade . ' - ' . $b->estado. '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Bairro/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Bairro/alterar/'
                     . $b->id_bairro . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . '/Bairro/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Bairro/deletar/'
                     . $b->id_bairro . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

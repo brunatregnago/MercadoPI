@@ -64,13 +64,13 @@ class Produto extends CI_Controller {
                 'cd_medida_valor' => $this->input->post('medida_valor')
             );
 
-            $config['upload_path'] = './uploads/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_width'] = 1024;
-            $config['max_height'] = 768;
-            $config['encrypt_name'] = true;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('userfile')) {
+            //$config['upload_path'] = './uploads/';
+            //$config['allowed_types'] = 'gif|jpg|png';
+            //$config['max_width'] = 1024;
+            //$config['max_height'] = 768;
+            //$config['encrypt_name'] = true;
+            //$this->load->library('upload', $config);
+            /**if (!$this->upload->do_upload('userfile')) {
                 //Cria uma sessÃ£o com o error e redireciona
                 $error = $this->upload->display_errors();
                 $this->session->set_flashdata('mensagem', '<div class="alert alert-succsess">' . $error . '</div>');
@@ -81,13 +81,13 @@ class Produto extends CI_Controller {
                 $data['imagem_produto'] = $this->upload->data('file_name');
             }
 
-
+**/
             if ($this->ProdutoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Produto/lista');
+                redirect('index.php/Produto/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Produto/cadastro');
+                redirect('index.php/Produto/cadastro');
             }
         }
     }
@@ -110,7 +110,7 @@ class Produto extends CI_Controller {
                 $data = array(
                     'nome_produto' => $this->input->post('nome_produto')
                 );
-
+                
                 $config['upload_path'] = './uploads/';
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_width'] = 1024;
@@ -121,7 +121,7 @@ class Produto extends CI_Controller {
                     //Cria uma sessÃ£o com o error e redireciona
                     $error = $this->upload->display_errors();
                     $this->session->set_flashdata('mensagem', '<div class="alert alert-succsess">' . $error . '</div>');
-                    redirect('Equipe/cadastrar');
+                    redirect('index.php/Produto/cadastrar');
                     exit();
                 } else {
                     //Pega o nome do arquivo que foi enviado e adiciona no array $data
@@ -131,10 +131,10 @@ class Produto extends CI_Controller {
 
                 if ($this->ProdutoModel->update($id_produto, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Produto/lista');
+                    redirect('index.php/Produto/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Produto/alterar/' . $id_produto);
+                    redirect('index.php/Produto/alterar/' . $id_produto);
                 }
             }
         }
@@ -143,13 +143,13 @@ class Produto extends CI_Controller {
     public function deletar($id_produto) {
         if ($id_produto > 0) {
             unlink('./uploads/' . $data['imagem_produto']);
-            if ($this->ProdutoModel->delete($id_produto > 0)) {
+            if ($this->ProdutoModel->delete($id_produto)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Produto/lista');
+        redirect('index.php/Produto/lista');
     }
 
 }

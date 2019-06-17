@@ -40,10 +40,10 @@ class Pais extends CI_Controller {
 
             if ($this->PaisModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Pais/lista');
+                redirect('index.php/Pais/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Pais/cadastro');
+                redirect('index.php/Pais/cadastro');
             }
         }
     }
@@ -54,7 +54,7 @@ class Pais extends CI_Controller {
             $this->form_validation->set_rules('nome_pais', 'nome_pais', 'required');
 
             if ($this->form_validation->run() == false) {
-                $data['pais'] = $this->PaisModel->getOne($id);
+                $data['pais'] = $this->PaisModel->getOne($id_pais);
                 $this->load->view('BackEnd/Header');
                 $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormPais', $data);
@@ -65,10 +65,10 @@ class Pais extends CI_Controller {
                 );
                 if ($this->PaisModel->update($id_pais, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Pais/lista');
+                    redirect('index.php/Pais/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Pais/alterar/' . $id_pais);
+                    redirect('index.php/Pais/alterar/' . $id_pais);
                 }
             }
         }
@@ -76,13 +76,13 @@ class Pais extends CI_Controller {
 
     public function deletar($id_pais) {
         if ($id_pais > 0) {
-            if ($this->PaisModel->delete($id_pais > 0)) {
+            if ($this->PaisModel->delete($id_pais)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Pais/lista');
+        redirect('index.php/Pais/lista');
     }
 
 }

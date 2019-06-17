@@ -19,9 +19,9 @@
                     echo '<td>' . $pmc->fim_promocao . '</td>';
                     echo '<td>' . $pmc->porcento_desconto . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'Promocao/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Promocao/alterar/'
                     . $pmc->id_promocao . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'Promocao/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Promocao/deletar/'
                     . $pmc->id_promocao . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

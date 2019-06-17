@@ -15,9 +15,9 @@
                     echo '<td>' . $es->nome_estado . '</td>';
                     echo '<td>' . $es->pais . '</td>';
                     echo '<td>'
-                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . '/Estado/alterar/'
+                    . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/Estado/alterar/'
                     . $es->id_estado . '"><i class="fas fa-edit"></i></a>'
-                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . '/Estado/deletar/'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/Estado/deletar/'
                     . $es->id_estado . '"><i class="fas fa-trash"></i></a>'
                     . '</td>';
                     echo '</tr>';

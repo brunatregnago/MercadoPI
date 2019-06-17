@@ -38,10 +38,10 @@ class Departamento extends CI_Controller {
 
             if ($this->DepartamentoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Departamento/lista');
+                redirect('index.php/Departamento/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Departamento/cadastro');
+                redirect('index.php/Departamento/cadastro');
             }
         }
     }
@@ -63,10 +63,10 @@ class Departamento extends CI_Controller {
                 );
                 if ($this->DepartamentoModel->update($id_departamento, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Departamento/lista');
+                    redirect('index.php/Departamento/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Departamento/alterar/' . $id_departamento);
+                    redirect('index.php/Departamento/alterar/' . $id_departamento);
                 }
             }
         }
@@ -74,13 +74,13 @@ class Departamento extends CI_Controller {
 
     public function deletar($id_departamento) {
         if ($id_departamento > 0) {
-            if ($this->DepartamentoModel->delete($id_departamento > 0)) {
+            if ($this->DepartamentoModel->delete($id_departamento)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Departamento/lista');
+        redirect('index.php/Departamento/lista');
     }
 
 }

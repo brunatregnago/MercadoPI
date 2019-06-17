@@ -10,6 +10,8 @@ class PagInicial extends CI_Controller {
         //$this->LoginModel->verificaLogin();
 
         $this->load->model('FrontEndModels/PagInicialModel');
+        
+        $this->load->model('FrontEndModels/PagPromocaoModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -17,10 +19,11 @@ class PagInicial extends CI_Controller {
     }
 
     public function lista() {
-        //$data['departamento'] = $this->DepartamentoModel->getAll();
+        $data['produto'] = $this->PagInicialModel->getAll();
+        $data['promocao'] = $this->PagPromocaoModel->getAll();
         $this->load->view('FrontEnd/Header');
-        $this->load->view('FrontEnd/Menu');
-        $this->load->view('FrontEnd/PaginaInicial');
+        //$this->load->view('FrontEnd/Menu');
+        $this->load->view('FrontEnd/PaginaInicial', $data);
         //$this->load->view('Footer');
     }
 }

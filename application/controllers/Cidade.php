@@ -43,10 +43,10 @@ class Cidade extends CI_Controller {
 
             if ($this->CidadeModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('Cidade/lista');
+                redirect('index.php/Cidade/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
-                redirect('Cidade/cadastro');
+                redirect('index.php/Cidade/cadastro');
             }
         }
     }
@@ -71,10 +71,10 @@ class Cidade extends CI_Controller {
                 );
                 if ($this->CidadeModel->update($id_cidade, $data)) {
                     //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
-                    redirect('Cidade/lista');
+                    redirect('index.php/Cidade/lista');
                 } else {
                     //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
-                    redirect('Cidade/alterar/' . $id_cidade);
+                    redirect('index.php/Cidade/alterar/' . $id_cidade);
                 }
             }
         }
@@ -82,13 +82,13 @@ class Cidade extends CI_Controller {
 
     public function deletar($id_cidade) {
         if ($id_cidade > 0) {
-            if ($this->CidadeModel->delete($id_cidade > 0)) {
+            if ($this->CidadeModel->delete($id_cidade)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
-        redirect('Cidade/lista');
+        redirect('index.php/Cidade/lista');
     }
 
 }
