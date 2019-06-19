@@ -8,8 +8,8 @@
                 <ul class="navbar-nav mr-auto">
                     <li><a href="">Promoções</a></li>
                     <?php
-                    foreach ($menu as $m) {
-                        echo '<li><a href="">' . $m->departamento . '</a></li>';
+                    foreach ($departamento as $dep) {
+                        echo '<li><a href="">' . $dep->nome_departamento . '</a></li>';
                     }
                     ?>
                 </ul>

@@ -13,7 +13,6 @@ que possuem o cd dessa categoria -->
                     <th> Código </th>
                     <th> Descrição </th>
                     <th> Peso </th>
-                    <th> Medida do peso </th>
                     <th> Preço </th>
                     <th> Departamento </th>
                     <th> Categoria </th>
@@ -28,9 +27,8 @@ que possuem o cd dessa categoria -->
                  // echo '<button type="button" class="btn btn-light mr-4 mb-3 mt-4 shadow text-center"><img class="img-fluid mb-2" style="max-height:150px; max-width:150px;" src="' . $this->config->base_url() . 'uploads/' . $e->imagem_produto . '">';
                     echo '<td>' . $p->id_produto . '</td>';
                     echo '<td>' . $p->nome_produto . '</td>';
-                    echo '<td>' . $p->peso_produto . '</td>';
-                    echo '<td>' . $p->medida . '</td>';
-                    echo '<td>' . $p->valor_unitario_produto . '</td>';
+                    echo '<td>' . $p->peso_produto .' '. $p->medida .'</td>';
+                    echo '<td>' .'R$ '. $p->valor_unitario_produto . '</td>';
                     echo '<td>' . $p->departamento . '</td>';
                     echo '<td>' . $p->categoria . '</td>';
                     echo '<td>' . $p->subcategoria . '</td>';

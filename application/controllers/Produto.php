@@ -20,25 +20,22 @@ class Produto extends CI_Controller {
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
         $this->lista();
     }
-
+    
     public function lista() {
         $data['produto'] = $this->ProdutoModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralProduto');
         $this->load->view('BackEnd/ListaProduto', $data);
         //$this->load->view('Footer');
     }
 
     public function cadastro() {
         $this->form_validation->set_rules('id_departamento', 'id_departamento', 'required');
-        $this->form_validation->set_rules('id_categoria', 'id_categoria', 'required');
-        $this->form_validation->set_rules('id_subcategoria', 'id_subcategoria', 'required');
         $this->form_validation->set_rules('id_produto', 'id_produto', 'required');
         $this->form_validation->set_rules('nome_produto', 'nome_produto', 'required');
         $this->form_validation->set_rules('peso_produto', 'peso_produto', 'required');
-        $this->form_validation->set_rules('unidade_medida', 'unidade_medida', 'required');
+        $this->form_validation->set_rules('id_medida', 'id_medida', 'required');
         $this->form_validation->set_rules('valor_unitario_produto', 'valor_unitario_produto', 'required');
-        $this->form_validation->set_rules('medida_valor', 'medida_valor', 'required');
+        $this->form_validation->set_rules('id_medida_valor', 'id_medida_valor', 'required');
 
         if ($this->form_validation->run() == false) {
             $data['departamento'] = $this->DepartamentoModel->getAll();
@@ -47,7 +44,6 @@ class Produto extends CI_Controller {
             $data['medida_valor'] = $this->MedidaValorModel->getAll();
             $data['unidade_medida'] = $this->UnidadeMedidaModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralProduto');
             $this->load->view('BackEnd/FormProduto', $data);
             //$this->load->view('Footer');
         } else {
@@ -55,40 +51,41 @@ class Produto extends CI_Controller {
             $data = array(
                 'cd_departamento' => $this->input->post('id_departamento'),
                 'cd_categoria' => $this->input->post('id_categoria'),
-                'id_subcategoria' => $this->input->post('id_subcategoria'),
+                'cd_subcategoria' => $this->input->post('id_subcategoria'),
                 'id_produto' => $this->input->post('id_produto'),
                 'nome_produto' => $this->input->post('nome_produto'),
                 'peso_produto' => $this->input->post('peso_produto'),
-                'cd_unidade_medida' => $this->input->post('unidade_medida'),
+                'cd_unidade_medida' => $this->input->post('id_medida'),
                 'valor_unitario_produto' => $this->input->post('valor_unitario_produto'),
-                'cd_medida_valor' => $this->input->post('medida_valor')
+                'cd_medida_valor' => $this->input->post('id_medida_valor')
             );
-
-            //$config['upload_path'] = './uploads/';
-            //$config['allowed_types'] = 'gif|jpg|png';
-            //$config['max_width'] = 1024;
-            //$config['max_height'] = 768;
-            //$config['encrypt_name'] = true;
-            //$this->load->library('upload', $config);
-            /**if (!$this->upload->do_upload('userfile')) {
-                //Cria uma sessÃ£o com o error e redireciona
+/**
+            $config['upload_path'] = './uploads/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_width'] = 1024;
+            $config['max_height'] = 768;
+            $config['encrypt_name'] = true;
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('userfile')) {
+                
                 $error = $this->upload->display_errors();
-                $this->session->set_flashdata('mensagem', '<div class="alert alert-succsess">' . $error . '</div>');
-                redirect('Equipe/cadastrar');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success">' . $error . '</div>');
+                redirect('Produto/cadastrar');
                 exit();
             } else {
-                //Pega o nome do arquivo que foi enviado e adiciona no array $data
+                
                 $data['imagem_produto'] = $this->upload->data('file_name');
             }
-
 **/
+            }
+
+
             if ($this->ProdutoModel->insert($data)) {
                 //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
                 redirect('index.php/Produto/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Produto/cadastro');
-            }
         }
     }
 
@@ -108,7 +105,16 @@ class Produto extends CI_Controller {
                 //$this->load->view('Footer');
             } else {
                 $data = array(
-                    'nome_produto' => $this->input->post('nome_produto')
+                    
+                'cd_departamento' => $this->input->post('id_departamento'),
+                'cd_categoria' => $this->input->post('id_categoria'),
+                'id_subcategoria' => $this->input->post('id_subcategoria'),
+                'id_produto' => $this->input->post('id_produto'),
+                'nome_produto' => $this->input->post('nome_produto'),
+                'peso_produto' => $this->input->post('peso_produto'),
+                'cd_unidade_medida' => $this->input->post('id_medida'),
+                'valor_unitario_produto' => $this->input->post('valor_unitario_produto'),
+                'cd_medida_valor' => $this->input->post('id_medida_valor')
                 );
                 
                 $config['upload_path'] = './uploads/';
@@ -118,13 +124,12 @@ class Produto extends CI_Controller {
                 $config['encrypt_name'] = true;
                 $this->load->library('upload', $config);
                 if (!$this->upload->do_upload('userfile')) {
-                    //Cria uma sessÃ£o com o error e redireciona
+                    //Cria uma sessão com o error e redireciona
                     $error = $this->upload->display_errors();
                     $this->session->set_flashdata('mensagem', '<div class="alert alert-succsess">' . $error . '</div>');
-                    redirect('index.php/Produto/cadastrar');
+                    redirect('Produto/cadastrar');
                     exit();
                 } else {
-                    //Pega o nome do arquivo que foi enviado e adiciona no array $data
                     $data['imagem_produto'] = $this->upload->data('file_name');
                 }
 

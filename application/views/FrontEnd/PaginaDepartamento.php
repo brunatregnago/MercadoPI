@@ -12,11 +12,14 @@
                 <?php
                 foreach ($departamento as $dep) {
                     echo '<div class="item">';
-                    echo '<div class="produto">';
-                    echo '<img src="' . $po->imagem_produto . '"/>';
-                    echo '<h2>' . $po->nome_produto . '</h2>';
-                    echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                    echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
+                    echo '<div class="produto">';if ($dep->imagem_produto === Null) {
+                        echo '<img src="uploads/noimage.png"/>';
+                    } else {
+                        echo '<img src="' . $dep->imagem_produto . '"/>';
+                    }
+                    echo '<h2>' . $dep->nome_produto . '</h2>';
+                    echo '<h5>' . $dep->peso_produto . ' ' . $dep->medida . '</h5>';
+                    echo '<h4>R$ ' . $dep->valor_unitario_produto . ' ' . $dep->medida_valor . '</h4>';
                     echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
                     echo '</div>';
                     echo '</div>';

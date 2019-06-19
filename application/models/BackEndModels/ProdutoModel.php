@@ -1,7 +1,7 @@
 <?php
 
 class ProdutoModel extends CI_Model {
-    
+
     public function getAll() {
         //nome da tabela no DB
         $this->db->select('tb_produto.*,tb_unidade_medida.medida as medida, tb_medida_valor.medida_valor as medida_valor,tb_departamento.nome_departamento as departamento, tb_categoria.nome_categoria as categoria,  tb_subcategoria.nome_subcategoria as subcategoria');
@@ -13,9 +13,9 @@ class ProdutoModel extends CI_Model {
         $query = $this->db->get('tb_produto');
         return $query->result();
     }
-    
+
     public function insert($data = array()) {
-      $this->db->insert('tb_produto', $data);
+        $this->db->insert('tb_produto', $data);
         return $this->db->affected_rows();
     }
 

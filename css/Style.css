@@ -11,6 +11,13 @@
 .headertwo{
     background-color: white;
 }
+.headertwo input{
+    border-radius: 5px 0 0 5px;
+}
+.headertwo button{
+    margin-left: 0;
+    
+}
 .cabecalho{
     background-color: white;
     height: 90px;
@@ -31,7 +38,7 @@
     text-decoration: none;
 }
 .promocao{
-    border: 1px solid darkgray;
+    border: 1px solid #d9d9d9;
     padding: 2%;
     margin-top: 5%;
 }
@@ -75,7 +82,7 @@
     margin: 10px 0 0 14px;
 }
 hr{
-    background-color: darkgray;
+    background-color: #d9d9d9;
 }
 .cadastrar_se{
     margin-top: 5%;
@@ -100,7 +107,7 @@ hr{
     margin-top: 5%;
 }
 .categorias{
-    border: 1px solid darkgray;
+    border: 1px solid #d9d9d9;
     height: 100%;
 }
 .categorias h1 a{
@@ -126,7 +133,7 @@ hr{
     color: #004d00;
 }
 .painel_produto{
-    border: 1px solid darkgray;
+    border: 1px solid #d9d9d9;
 }
 .prop{
     margin-top: 5%;
@@ -180,7 +187,7 @@ hr{
 }
 .user{
     color: #cccccc;
-    font-size: 40px;
+    font-size: 170%;
 }
 .user:hover{
     color:#004d00;

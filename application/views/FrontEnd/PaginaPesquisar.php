@@ -3,7 +3,7 @@
         <div class="painel_produto pt-5 pb-5 mt-4">
             <div class="row">
                 <?php
-                foreach ($promocao as $po) {
+                foreach ($produtos as $po) {
                     echo '<div class="item col-md-2">';
                     echo '<div class="produto">';
                     if ($po->imagem_produto === Null) {

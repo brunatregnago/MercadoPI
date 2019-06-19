@@ -21,7 +21,6 @@ class Categoria extends CI_Controller {
     public function lista() {
         $data['categoria'] = $this->CategoriaModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralProduto');
         $this->load->view('BackEnd/ListaCategoria', $data);
         //$this->load->view('Footer');
     }

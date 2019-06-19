@@ -32,7 +32,6 @@ class Estado extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['pais'] = $this->PaisModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralEntrega');
             $this->load->view('BackEnd/FormEstado', $data);
             //$this->load->view('Footer');
         } else {

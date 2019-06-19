@@ -25,22 +25,30 @@
                 </li>
             </ul>
         </div>
-        <div class="headertwo">
-            <ul class="nav justify-content">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><img src=""></a>
-                </li>
-                <form name="frmBusca" method="post" action="" >
-                    <input type="text" name="palavra" />
-                    <input type="submit"  value="Buscar" />
-                </form>
+        <div class="row">
+            <div class="headertwo col-12 mt-2">
+                <ul class="nav justify-content">
+                    <li class="nav-item col-md-3">
+                        <a class="nav-link" href="#"><img src=""></a>
+                    </li>
+                    <form class="form-inline col-md-5" action="<?= base_url('buscar')?>" method="POST">
+                        <input class="form-control mr-sm-2 col-md-10" id="buscar" name="buscar" type="search" placeholder="Pesquise aqui o que deseja" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
 
-                <div class="col-md-2 d-none d-md-block"><!--Link para cadastrar usuário-->
-                    <a href="" class="user">
-                        <i class="far fa-user"></i>
-                    </a>
-                </div>
-            </ul>
+                    <div class="col-md-3 d-none d-md-block"><!--Link para cadastrar usuário-->
+                        <li><a href="" class="user">
+                                <i class="far fa-user"></i>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
         </div>
-    </body>
-</html>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"</script>
+        <!-- jQuery UI -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"</script>
+
+
+
