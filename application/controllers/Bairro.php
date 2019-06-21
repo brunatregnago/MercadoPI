@@ -5,8 +5,8 @@ class Bairro extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //$this->load->model('LoginModel');
-        //$this->LoginModel->verificaLogin();
+        $this->load->model('BackEndModels/LoginAdministradorModel');
+        $this->LoginAdministradorModel->verificaLogin();
         $this->load->model('BackEndModels/CidadeModel');
         $this->load->model('BackEndModels/BairroModel');
     }

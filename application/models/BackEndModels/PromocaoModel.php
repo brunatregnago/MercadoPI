@@ -1,15 +1,16 @@
 <?php
 
 class PromocaoModel extends CI_Model {
-    
+
     public function getAll() {
         //nome da tabela no DB
+        $this->db->select('tb_promocao.*');
         $query = $this->db->get('tb_promocao');
         return $query->result();
     }
-    
+
     public function insert($data = array()) {
-      $this->db->insert('tb_promocao', $data);
+        $this->db->insert('tb_promocao', $data);
         return $this->db->affected_rows();
     }
 

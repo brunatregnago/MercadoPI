@@ -22,7 +22,7 @@
                     echo '<h2>' . $po->nome_produto . '</h2>';
                     echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
                     echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
+                    echo '<center><a href="index.php/PagProdutoEspecifico/lista"><button type="button" class="btn" data-toggle="button" >Visualizar</button></a></center>';
                     echo '</div>';
                     echo '</div>';
                 }
@@ -30,48 +30,58 @@
             </div>
         </div>
     </div>
-<!--CATEGORIA de protudos da mercearia HOME
-<div class="engloba_cate_prod d-none d-md-block">-->
+    <!--CATEGORIA de protudos da mercearia HOME
+    <div class="engloba_cate_prod d-none d-md-block">-->
 
-<div class="promocao">
-    <div class="row">
+    <div class="promocao">
+        <div class="row">
 
-        <div class="col-12">
-            <h1>dep</h1>
-            <hr>
+            <div class="col-12">
+                <?php
+                foreach ($produto as $po) {
+                    for($i = 0; $i < 1; $i++){
+                    echo '<h1 value="'. $po->id_departamento.'">' . $po->departamento . '</h1>';
+                    $dep = $po->id_departamento;
+                    }
+                }
+                ?>
+                <hr>
+            </div>
         </div>
-    </div>
-    <!--            <div class="col-md-2">
-                    <div class="categorias">
-                        <h1><a href="">Mercearia</a></h1>
-                        <h2><a href="">Grãos</a></h2>
-                        <h2><a href="">Óleos, azeites e vinagres</a></h2>
-                        <h2><a href="">Temperos</a></h2>
-                        <h2><a href="">Farinhas</a></h2>
-                        <h2><a href="">Massas e molhos</a></h2>
-                        <h2><a href="">Doces e sobremesas</a></h2>
-                    </div>
-                </div>-->
-    <div class="row">
-        <div class="col-md-12">  
+        <!--            <div class="col-md-2">
+                        <div class="categorias">
+                            <h1><a href="">Mercearia</a></h1>
+                            <h2><a href="">Grãos</a></h2>
+                            <h2><a href="">Óleos, azeites e vinagres</a></h2>
+                            <h2><a href="">Temperos</a></h2>
+                            <h2><a href="">Farinhas</a></h2>
+                            <h2><a href="">Massas e molhos</a></h2>
+                            <h2><a href="">Doces e sobremesas</a></h2>
+                        </div>
+                    </div>-->
+        <div class="row">
+            <div class="col-md-12">  
                 <div id="owl-demo" class="owl-carousel owl-theme owl-bruna">
                     <?php
                     foreach ($produto as $po) {
-                        echo '<div class="item">';
-                        echo '<div class="col-md-12">';
-                        echo '<div class="produto">';
-                        if ($po->imagem_produto === Null) {
-                            echo '<img src="uploads/noimage.png"/>';
-                        } else {
-                            echo '<img src="' . $po->imagem_produto . '"/>';
+
+                        if ($po->cd_departamento === $dep) {
+                            echo '<div class="item">';
+                            echo '<div class="col-md-12">';
+                            echo '<div class="produto">';
+                            if ($po->imagem_produto === Null) {
+                                echo '<img src="uploads/noimage.png"/>';
+                            } else {
+                                echo '<img src="' . $po->imagem_produto . '"/>';
+                            }
+                            echo '<h2>' . $po->nome_produto . '</h2>';
+                            echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
+                            echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
+                            echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
                         }
-                        echo '<h2>' . $po->nome_produto . '</h2>';
-                        echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                        echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                        echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</div>';
                     }
                     ?>
                 </div>

@@ -58,7 +58,7 @@
                         <hr>
                     </li>
                     <li class="nav-item md-5">
-                        <a class="nav-link" style="color: #a9a9a9;" href="#">
+                        <a class="nav-link" style="color: #a9a9a9;" href="<?= $this->config->base_url() . 'Usuario/sair'; ?>">
                             <i class="fas fa-sign-out-alt"></i> Sair 
                         </a>
                         <br>

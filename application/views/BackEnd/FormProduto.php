@@ -49,7 +49,7 @@
         </div>
         <div class="form-group col-md-5">
             <label for="medida_valor">Unidade do preço</label>
-            <select id="medida_valor" class="form-control" name="medida_valor">
+            <select id="id_medida_valor" class="form-control" name="id_medida_valor">
                 <option selected>Selecione a unidade de medida</option>
                 <?php
                 foreach ($medida_valor as $mval) {
@@ -64,7 +64,7 @@
         </div>
         <div class="form-group col-md-5">
             <label for="unidade_medida">Unidade de medida</label>
-            <select id="unidade_medida" name="unidade_medida" class="form-control">
+            <select id="id_medida" name="id_medida" class="form-control">
                 <option selected>Selecione a unidade do peso</option>
                 <?php
                 foreach ($unidade_medida as $uni) {
@@ -72,7 +72,7 @@
                 }
                 ?>
             </select>
-        </div><!--
+        </div>
         <div class="form-group col-md-5">
             <div class="input-group md-12">
                 <div class="custom-file">
@@ -81,17 +81,17 @@
                 </div>
             </div>
 
-            //<?php
-           // if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
-             //   echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
-            //}
+            <?php
+            if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
+                echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
+            }
             ?>
-        </div>-->
+        </div>
     </div>
 
 
-<button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
-<button type="reset" class="btn btn-secondary mt-4 mb-2">Cancelar</button>
+    <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
+    <button type="reset" class="btn btn-secondary mt-4 mb-2">Cancelar</button>
 </form>
 </body>
 </html>

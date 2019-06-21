@@ -6,8 +6,8 @@ class Promocao extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //$this->load->model('LoginModel');
-        //$this->LoginModel->verificaLogin();
+        $this->load->model('BackEndModels/LoginAdministradorModel');
+        $this->LoginAdministradorModel->verificaLogin();
 
         $this->load->model('BackEndModels/PromocaoModel');
     }
@@ -37,14 +37,13 @@ class Promocao extends CI_Controller {
 
             $data = array(
                 'nome_promocao' => $this->input->post('nome_promocao'),
+                'porcento_desconto' => $this->input->post('porcento_desconto'),
                 'inicio_promocao' => $this->input->post('inicio_promocao'),
-                'fim_promocao' => $this->input->post('fim_promocao'),
-                'porcento_desconto' => $this->input->post('porcento_desconto')
-            );
+                'fim_promocao' => $this->input->post('fim_promocao'),);
 
             if ($this->PromocaoModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
-                redirect('index.php/Promocao/lista');
+                    //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                    redirect('index.php/Promocao/lista');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Promocao/cadastro');
@@ -85,7 +84,7 @@ class Promocao extends CI_Controller {
 
     public function deletar($id_promocao) {
         if ($id_promocao > 0) {
-            if ($this->PromocaoModel->delete($id_promocao > 0)) {
+            if ($this->PromocaoModel->delete($id_promocao)) {
                 //$this->session->set_flashdata('mensagem', 'Prova deletada.');
             } else {
                 //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');

@@ -21,12 +21,12 @@
                     <a class="nav-link" href="#">Fale Conosco</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Área Restrita</a>
+                    <a class="nav-link" href="<?= $this->config->base_url() ?>index.php/Usuario/login">Área Restrita</a>
                 </li>
             </ul>
         </div>
         <div class="row">
-            <div class="headertwo col-12 mt-2">
+            <div class="headertwo col-12 mt-3">
                 <ul class="nav justify-content">
                     <li class="nav-item col-md-3">
                         <a class="nav-link" href="#"><img src=""></a>

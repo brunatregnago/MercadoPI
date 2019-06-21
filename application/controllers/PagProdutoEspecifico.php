@@ -18,7 +18,6 @@ class PagProdutoEspecifico extends CI_Controller{
 
     public function lista() {
         $data['produto'] = $this->ProdutoModel->getAll();
-        $this->load->view('FrontEnd/Header');
         $this->load->view('FrontEnd/PaginaProdutoEspecifico', $data);
         //$this->load->view('Footer');
     }

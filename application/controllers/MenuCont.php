@@ -16,7 +16,8 @@ class MenuCont extends CI_Controller {
     }
 
     public function lista() {
-        $data['departamento'] = $this->DepartamentoModel->getAll();
+        $data['menu'] = $this->DepartamentoModel->getAll();
+       
         $this->load->view('FrontEnd/Menu', $data);
     }
 
