@@ -1,6 +1,10 @@
 
 <form action="" class="col-md-8 mt-5" method="POST">
     <div class="form-group col-md-10">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
         <div class="form-group">
              <input type="hidden" name="id_pais" value="<?= (isset($pais)) ? $pais->id_pais : ''; ?>">
             <label for="pais">País</label>

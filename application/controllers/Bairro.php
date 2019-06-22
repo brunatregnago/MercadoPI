@@ -41,10 +41,10 @@ class Bairro extends CI_Controller {
             );
 
             if ($this->BairroModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'Bairro cadastrado com sucesso.');
                 redirect('index.php/Bairro/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Bairro/cadastro');
             }
         }
@@ -69,10 +69,10 @@ class Bairro extends CI_Controller {
                     'nome_bairro' => $this->input->post('nome_bairro')
                 );
                 if ($this->BairroModel->update($id_bairro, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Bairro atualizado com sucesso.');
                     redirect('index.php/Bairro/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar bairro.');
                     redirect('index.php/Bairro/alterar/' . $id_bairro);
                 }
             }
@@ -82,9 +82,9 @@ class Bairro extends CI_Controller {
     public function deletar($id_bairro) {
         if ($id_bairro > 0) {
             if ($this->BairroModel->delete($id_bairro)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Bairro deletado.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Bairro/lista');

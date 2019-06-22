@@ -42,10 +42,10 @@ class Subcategoria extends CI_Controller {
             );
 
             if ($this->SubcategoriaModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'Subcategoria cadastrada com sucesso.');
                 redirect('index.php/Subcategoria/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Subcategoria/cadastro');
             }
         }
@@ -72,10 +72,10 @@ class Subcategoria extends CI_Controller {
                     'nome_subcategoria' => $this->input->post('nome_subcategoria')
                 );
                 if ($this->SubcategoriaModel->update($id_subcategoria, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Subcategoria atualizada com sucesso.');
                     redirect('index.php/Subcategoria/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao alterar.');
                     redirect('index.php/Subcategoria/alterar/' . $id_subcategoria);
                 }
             }
@@ -85,9 +85,9 @@ class Subcategoria extends CI_Controller {
     public function deletar($id_subcategoria) {
         if ($id_subcategoria > 0) {
             if ($this->SubcategoriaModel->delete($id_subcategoria)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Subcategoria deletada.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Subcategoria/lista');

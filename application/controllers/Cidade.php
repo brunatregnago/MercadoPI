@@ -42,10 +42,10 @@ class Cidade extends CI_Controller {
             );
 
             if ($this->CidadeModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'Cidade cadastrada com sucesso.');
                 redirect('index.php/Cidade/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Cidade/cadastro');
             }
         }
@@ -70,10 +70,10 @@ class Cidade extends CI_Controller {
                     'nome_cidade' => $this->input->post('nome_cidade')
                 );
                 if ($this->CidadeModel->update($id_cidade, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Cidade foi atualizada.');
                     redirect('index.php/Cidade/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar.');
                     redirect('index.php/Cidade/alterar/' . $id_cidade);
                 }
             }
@@ -83,9 +83,9 @@ class Cidade extends CI_Controller {
     public function deletar($id_cidade) {
         if ($id_cidade > 0) {
             if ($this->CidadeModel->delete($id_cidade)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Cidade deletada.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Cidade/lista');

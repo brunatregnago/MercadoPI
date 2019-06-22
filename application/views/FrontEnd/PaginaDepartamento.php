@@ -12,7 +12,8 @@
                 <?php
                 foreach ($departamento as $dep) {
                     echo '<div class="item">';
-                    echo '<div class="produto">';if ($dep->imagem_produto === Null) {
+                    echo '<div class="produto">';
+                    if ($dep->imagem_produto === Null) {
                         echo '<img src="uploads/noimage.png"/>';
                     } else {
                         echo '<img src="' . $dep->imagem_produto . '"/>';

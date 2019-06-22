@@ -39,10 +39,10 @@ class Pais extends CI_Controller {
             );
 
             if ($this->PaisModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'País cadastrado com sucesso.');
                 redirect('index.php/Pais/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar.');
                 redirect('index.php/Pais/cadastro');
             }
         }
@@ -64,10 +64,10 @@ class Pais extends CI_Controller {
                     'nome_pais' => $this->input->post('nome_pais')
                 );
                 if ($this->PaisModel->update($id_pais, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'País altualizado com sucesso.');
                     redirect('index.php/Pais/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar país.');
                     redirect('index.php/Pais/alterar/' . $id_pais);
                 }
             }
@@ -77,9 +77,9 @@ class Pais extends CI_Controller {
     public function deletar($id_pais) {
         if ($id_pais > 0) {
             if ($this->PaisModel->delete($id_pais)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'País deletado.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Pais/lista');

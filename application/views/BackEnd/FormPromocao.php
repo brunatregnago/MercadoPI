@@ -3,6 +3,10 @@
     <div class="form-group">
         <div class="form-row">
             <div class="form-group col-md-10">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
                 <input type="hidden" name="id_promocao" value="<?= (isset($promocao)) ? $promocao->id_promocao : ''; ?>">
 
                 <label for="nomepromocao">Nome</label>

@@ -42,10 +42,10 @@ class Promocao extends CI_Controller {
                 'fim_promocao' => $this->input->post('fim_promocao'),);
 
             if ($this->PromocaoModel->insert($data)) {
-                    //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                    $this->session->set_flashdata('mensagem', 'Promoção cadastrada com sucesso.');
                     redirect('index.php/Promocao/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Promocao/cadastro');
             }
         }
@@ -72,10 +72,10 @@ class Promocao extends CI_Controller {
                     'porcento_desconto' => $this->input->post('oorcento_desconto')//input == entrada
                 );
                 if ($this->PromocaoModel->update($id_promocao, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Promoção atualizada com sucesso.');
                     redirect('index.php/Promocao/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar.');
                     redirect('index.php/Promocao/alterar/' . $id_promocao);
                 }
             }
@@ -85,9 +85,9 @@ class Promocao extends CI_Controller {
     public function deletar($id_promocao) {
         if ($id_promocao > 0) {
             if ($this->PromocaoModel->delete($id_promocao)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Promoção deletada.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Promocao/lista');

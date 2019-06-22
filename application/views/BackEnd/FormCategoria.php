@@ -1,7 +1,11 @@
 
 <form method="POST" action="" class="col-9 mt-5">
     <div class="form-group">
-        <div class="form-group col-md-9">
+        <div class="form-group col-md-10">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
             <input type="hidden" name="id_categoria" value="<?= (isset($categoria)) ? $categoria->id_categoria : ''; ?>">
             
             <label for="departamento">Departamento</label>

@@ -1,7 +1,7 @@
 <?php
 
-class PagPromocaoModel extends CI_Model{
-    
+class PagPromocaoModel extends CI_Model {
+
     public function getAll() {
         //nome da tabela no DB
         $this->db->select('tb_produto.*,tb_unidade_medida.medida, tb_medida_valor.medida_valor,tb_promocao.*');
@@ -13,4 +13,5 @@ class PagPromocaoModel extends CI_Model{
         $query = $this->db->get('tb_promocao');
         return $query->result();
     }
+
 }

@@ -1,6 +1,10 @@
 
 <form method="POST" action="" class="col-9 mt-5">
     <div class="form-group col-10">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
         <div class="form-group">
             <input type="hidden" name="id_subcategoria" id="id_subcategoria" value="<?= (isset($subcategoria)) ? $subcategoria->id_subcategoria : ''; ?>">
             

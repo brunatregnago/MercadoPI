@@ -1,21 +1,24 @@
 
 <div class="container">
-    <div class="row">
-        <div id="owl-demo" class="owl-theme owl-bruna">
+    <div id="owl-demo" class="owl-theme owl-bruna">
+        <div class="row">
             <?php
             foreach ($todosdepartamentos as $tdep) {
-                echo '<div class="col-5">';
+                echo '<div class="col-3 mt-4">';
                 echo '<div class="promocao">';
-                echo '<h1>' . $tdep->nome_departamento . '</h1>';
+                echo '<h1 value="' . $tdep->id_departamento . '">' . $tdep->nome_departamento . '</h1>';
                 echo '<hr>';
-                if ($categoria->cd_departamento === $todosdepartamentos->id_departamento) {
-                    foreach ($categoria as $cat) {
+
+                foreach ($categoria as $cat) {
+                    if ($cat->cd_departamento == $tdep->id_departamento) {
                         echo '<div class="item">';
-                        echo '<a href="">'. $cat->nome_categoria . '</a>';
+                        echo '<div class="produto">';
+                        echo '<a value="' . $cat->id_categoria . '"' . ' href="">' . $cat->nome_categoria . '</a>';
+                        echo '</div>';
                         echo '</div>';
                     }
                 }
-                echo ' </div>';
+                echo '</div>';
                 echo '</div>';
             }
             ?>

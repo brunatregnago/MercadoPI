@@ -11,18 +11,18 @@
         <div class="row">
             <div id="owl-demo" class="owl-carousel owl-theme owl-bruna">
                 <?php
-                foreach ($promocao as $po) {
+                foreach ($promocao as $pr) {
                     echo '<div class="item">';
                     echo '<div class="produto">';
-                    if ($po->imagem_produto === Null) {
+                    if ($pr->imagem_produto === Null) {
                         echo '<img src="uploads/noimage.png"/>';
                     } else {
-                        echo '<img src="' . $po->imagem_produto . '"/>';
+                        echo '<img src="' . $pr->imagem_produto . '"/>';
                     }
-                    echo '<h2>' . $po->nome_produto . '</h2>';
-                    echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                    echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><a href="index.php/PagProdutoEspecifico/lista"><button type="button" class="btn" data-toggle="button" >Visualizar</button></a></center>';
+                    echo '<h2 value="' . $pr->id_produto . '">' . $pr->nome_produto . '</h2>';
+                    echo '<h5>' . $pr->peso_produto . ' ' . $pr->medida . '</h5>';
+                    echo '<h4>R$ ' . $pr->valor_unitario_produto . ' ' . $pr->medida_valor . '</h4>';
+                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista"><button class="btn">Visualizar</button></a></center>';
                     echo '</div>';
                     echo '</div>';
                 }
@@ -30,6 +30,7 @@
             </div>
         </div>
     </div>
+
     <!--CATEGORIA de protudos da mercearia HOME
     <div class="engloba_cate_prod d-none d-md-block">-->
 
@@ -38,11 +39,9 @@
 
             <div class="col-12">
                 <?php
-                foreach ($produto as $po) {
-                    for($i = 0; $i < 1; $i++){
-                    echo '<h1 value="'. $po->id_departamento.'">' . $po->departamento . '</h1>';
-                    $dep = $po->id_departamento;
-                    }
+                foreach ($departamentoi as $di) {
+                    echo '<h1 value="' . $di->id_departamento . '">' . $di->nome_departamento . '</h1>';
+                    $dep = $di->id_departamento;
                 }
                 ?>
                 <hr>

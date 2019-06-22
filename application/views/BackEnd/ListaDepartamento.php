@@ -1,6 +1,10 @@
 <div class="col-9">
     <div class=" table-responsive col-md-10 mt-5">
         <table class="table table-striped table-bordered" id="table" style="text-align: center;">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
             <thead>
                 <tr>
                     <th> Departamento </th>

@@ -13,6 +13,7 @@ class PagInicial extends CI_Controller {
         $this->load->model('FrontEndModels/PagInicialModel');
         $this->load->model('BackEndModels/DepartamentoModel');
         $this->load->model('FrontEndModels/PagPromocaoModel');
+        $this->load->model('FrontEndModels/DepartamentoInicialModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -23,6 +24,7 @@ class PagInicial extends CI_Controller {
         $data['produto'] = $this->PagInicialModel->getAll();
         $data['promocao'] = $this->PagPromocaoModel->getAll();
         $data['menu'] = $this->DepartamentoModel->getAll();
+        $data['departamentoi'] = $this->DepartamentoInicialModel->getAll();
         $this->load->view('FrontEnd/Header');
         $this->load->view('FrontEnd/Menu', $data);
         $this->load->view('FrontEnd/PaginaInicial', $data);

@@ -83,10 +83,10 @@ class Produto extends CI_Controller {
                 $data['imagem_produto'] = $this->upload->data('file_name');
             }
             if ($this->ProdutoModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'Produto cadastrado com sucesso.');
                 redirect('index.php/Produto/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar.');
                 redirect('index.php/Produto/cadastro');
             }
         }
@@ -137,10 +137,10 @@ class Produto extends CI_Controller {
 
 
                 if ($this->ProdutoModel->update($id_produto, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Produto atualizado com sucesso.');
                     redirect('index.php/Produto/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar.');
                     redirect('index.php/Produto/alterar/' . $id_produto);
                 }
             }
@@ -151,9 +151,9 @@ class Produto extends CI_Controller {
         if ($id_produto > 0) {
             unlink('./uploads/' . $data['imagem_produto']);
             if ($this->ProdutoModel->delete($id_produto)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Produto deletado.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Produto/lista');

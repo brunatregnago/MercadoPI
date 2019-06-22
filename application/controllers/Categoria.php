@@ -42,10 +42,10 @@ class Categoria extends CI_Controller {
             );
 
             if ($this->CategoriaModel->insert($data)) {
-                //$this->session->set_flashdata('mensagem', 'Prova cadastrada.');
+                $this->session->set_flashdata('mensagem', 'Categoria cadastrada com sucesso.');
                 redirect('index.php/Categoria/lista');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
                 redirect('index.php/Categoria/cadastro');
             }
         }
@@ -71,10 +71,10 @@ class Categoria extends CI_Controller {
                     'nome_categoria' => $this->input->post('nome_categoria')
                 );
                 if ($this->CategoriaModel->update($id_categoria, $data)) {
-                    //$this->session->set_flashdata('mensagem', 'Alterado com sucesso.');
+                    $this->session->set_flashdata('mensagem', 'Categoria atualizada com sucesso.');
                     redirect('index.php/Categoria/lista');
                 } else {
-                    //$this->session->set_flashdata('mensagem', 'Falha ao alterar prova.');
+                    $this->session->set_flashdata('mensagem', 'Falha ao atualizar categoria.');
                     redirect('index.php/Categoria/alterar/' . $id_categoria);
                 }
             }
@@ -84,9 +84,9 @@ class Categoria extends CI_Controller {
     public function deletar($id_categoria) {
         if ($id_categoria > 0) {
             if ($this->CategoriaModel->delete($id_categoria)) {
-                //$this->session->set_flashdata('mensagem', 'Prova deletada.');
+                $this->session->set_flashdata('mensagem', 'Categoria deletada.');
             } else {
-                //$this->session->set_flashdata('mensagem', 'Falha ao deletar.');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }
         }
         redirect('index.php/Categoria/lista');

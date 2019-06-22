@@ -1,7 +1,11 @@
 
 <form action="" method="POST" class="col-md-9 mt-5" >
     <div class="form-row">
-        <div class="form-group col-md-9">
+        <div class="form-group col-md-10">
+        <?php
+        $mensagem = $this->session->flashdata('mensagem');
+        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+        ?>  
             <input type="hidden" name="id" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
 
             <label for="departamento">Departamento</label>
