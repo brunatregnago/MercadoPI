@@ -1,7 +1,10 @@
 
 <form action="" class="col-8 mt-5" method="POST">
-    <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
-
+    <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Lista de Promocao</button></a>
+    <a href="<?= $this->config->base_url() . 'index.php/ProdutoPromocao/cadastro'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Cadastrar Produtos em Promoção</button></a>
+    <a href="<?= $this->config->base_url() . 'index.php/ProdutoPromocao/lista'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Lista de Produtos em Promoção</button></a>
+  
+    
     <div class="form-group">
         <div class="form-row">
             <div class="form-group col-md-10">

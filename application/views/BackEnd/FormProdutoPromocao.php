@@ -11,7 +11,7 @@
                 <option selected>Selecione a promoção</option>
                 <?php
                 foreach ($promocao as $pmc) {
-                    echo '<option value="' . $pmc->id_promocao . '">' . $pmc->promocao . '</option>';
+                    echo '<option value="' . $pmc->id_promocao . '">' . $pmc->nome_promocao . '</option>';
                 }
                 ?>
             </select>
