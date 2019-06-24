@@ -20,5 +20,6 @@ class MenuCont extends CI_Controller {
        
         $this->load->view('FrontEnd/Menu', $data);
     }
+ 
 
 }
