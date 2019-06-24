@@ -13,48 +13,58 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <?php
-                foreach ($produto as $po) {
-                    echo '<div class="item">';
-                    echo '<div class="produto">';
-                    if ($po->imagem_produto === Null) {
-                        echo '<img src="uploads/noimage.png"/>';
-                    } else {
-                        echo '<img src="' . $po->imagem_produto . '"/>';
-                    }
-                    echo '<h2>' . $po->nome_produto . '</h2>';
-                    echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                    echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-                ?>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 mt-5">  
-                    <div id="owl-demo" class="owl-carousel owl-theme owl-bruna">
-                        <?php
-                        foreach ($produto as $po) {
+        <div class="produtoespecifico">
+            <div class="col-10">
+                <div class="row">
+                    <?php
+                    foreach ($produto as $po) {
+                        if ($po->id_produto == 4) {
+                            echo '<div class="col-md-12">';
                             echo '<div class="item">';
-                            echo '<div class="col-md-12" style="height: 292px;">';
-                            echo '<div class="produto">';
+                            echo '<div  class="col-md-5">';
                             if ($po->imagem_produto === Null) {
                                 echo '<img src="uploads/noimage.png"/>';
                             } else {
                                 echo '<img src="' . $po->imagem_produto . '"/>';
                             }
+                            echo '</div>';
+                            echo '<div  class="col-md-7">';
                             echo '<h2>' . $po->nome_produto . '</h2>';
-                            echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                            echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                            echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
+                            echo '<h4>' . $po->peso_produto . ' ' . $po->medida . '</h4>';
+                            echo '<h5>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h5>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
                         }
-                        ?>
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+                <div class="row">
+                    <div class="col-md-12 mt-5">  
+                        <div id="owl-demo" class="owl-carousel owl-theme owl-bruna">
+                            <?php
+                            foreach ($produto as $po) {
+                                echo '<div class="item">';
+                                echo '<div class="col-md-12" style="height: 292px;">';
+                                echo '<div class="produto">';
+                                if ($po->imagem_produto === Null) {
+                                    echo '<img src="uploads/noimage.png"/>';
+                                } else {
+                                    echo '<img src="' . $po->imagem_produto . '"/>';
+                                }
+                                echo '<h2>' . $po->nome_produto . '</h2>';
+                                echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
+                                echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
+                                echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

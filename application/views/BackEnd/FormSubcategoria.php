@@ -1,5 +1,6 @@
-
 <form method="POST" action="" class="col-9 mt-5">
+    <a href="<?= $this->config->base_url() . 'index.php/Subcategoria/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
+
     <div class="form-group col-10">
         <?php
         $mensagem = $this->session->flashdata('mensagem');
@@ -26,5 +27,6 @@
         <button type="reset" class="btn btn-secondary mb-2">Cancelar</button>
     </div>
 </form>
+</div>
 </body>
 </html>

@@ -1,5 +1,8 @@
 
 <form action="" class="col-md-8 mt-5" method="POST">
+    
+    <a href="<?= $this->config->base_url() . 'index.php/Pais/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
+
     <div class="form-group col-md-10">
         <?php
         $mensagem = $this->session->flashdata('mensagem');

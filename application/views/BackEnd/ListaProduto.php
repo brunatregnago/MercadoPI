@@ -5,7 +5,10 @@ o cd desse departamento
 
 pagina categoria recebe o id do departamento e filtra os produtos
 que possuem o cd dessa categoria -->
-    <div class=" table-responsive col-9 mt-5">
+    <div class=" table-responsive col-9 mt-5">        
+    
+    <a href="<?= $this->config->base_url() . 'index.php/Produto/cadastro'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Cadastrar</button></a>
+
         <table class="table table-striped table-bordered col-md-10" id="table" style="text-align: center;">
         <?php
         $mensagem = $this->session->flashdata('mensagem');

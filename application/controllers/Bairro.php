@@ -18,7 +18,6 @@ class Bairro extends CI_Controller {
     public function lista() {
         $data['bairro'] = $this->BairroModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralEntrega');
         $this->load->view('BackEnd/ListaBairro', $data);
         //$this->load->view('Footer');
     }
@@ -30,7 +29,6 @@ class Bairro extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['cidade'] = $this->CidadeModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralEntrega');
             $this->load->view('BackEnd/FormBairro', $data);
             //$this->load->view('Footer');
         } else {

@@ -18,9 +18,6 @@
                     <a class="nav-link" href="#">Institucional</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fale Conosco</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?= $this->config->base_url() ?>index.php/Usuario/login">Área Restrita</a>
                 </li>
             </ul>
@@ -29,16 +26,16 @@
             <div class="headertwo col-12 mt-3">
                 <ul class="nav justify-content">
                     <li class="nav-item col-md-3">
-                        <a class="nav-link" href="#"><img src=""></a>
+                        <a class="nav-link" style="max-height: 80px;" href="#"><img class="align-self-center" src="uploads/logotemp.png"></a>
                     </li>
                     <form class="form-inline col-md-5" action="<?= base_url('buscar')?>" method="POST">
                         <input class="form-control mr-sm-2 col-md-10" id="buscar" name="buscar" type="search" placeholder="Pesquise aqui o que deseja" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
-
+                    <div class="col-md-1"></div>
                     <div class="col-md-3 d-none d-md-block"><!--Link para cadastrar usuário-->
                         <li><a href="" class="user">
-                                <i class="far fa-user"></i>
+                                <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
                     </div>

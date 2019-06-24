@@ -20,7 +20,6 @@ class Estado extends CI_Controller {
     public function lista() {
         $data['estado'] = $this->EstadoModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralEntrega');
         $this->load->view('BackEnd/ListaEstado', $data);
         //$this->load->view('Footer');
     }

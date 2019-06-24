@@ -65,7 +65,7 @@ class Produto extends CI_Controller {
                 'cd_unidade_medida' => $this->input->post('id_medida'),
                 'valor_unitario_produto' => $this->input->post('valor_unitario_produto'),
                 'cd_medida_valor' => $this->input->post('id_medida_valor')
-            );
+            );/**
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_width'] = 1024;
@@ -81,7 +81,7 @@ class Produto extends CI_Controller {
             } else {
 
                 $data['imagem_produto'] = $this->upload->data('file_name');
-            }
+            }**/
             if ($this->ProdutoModel->insert($data)) {
                 $this->session->set_flashdata('mensagem', 'Produto cadastrado com sucesso.');
                 redirect('index.php/Produto/lista');

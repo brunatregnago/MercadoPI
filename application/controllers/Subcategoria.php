@@ -20,7 +20,6 @@ class Subcategoria extends CI_Controller {
     public function lista() {
         $data['subcategoria'] = $this->SubcategoriaModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralProduto');
         $this->load->view('BackEnd/ListaSubcategoria', $data);
         //$this->load->view('Footer');
     }

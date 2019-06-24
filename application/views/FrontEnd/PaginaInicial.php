@@ -19,10 +19,10 @@
                     } else {
                         echo '<img src="' . $pr->imagem_produto . '"/>';
                     }
-                    echo '<h2 value="' . $pr->id_produto . '">' . $pr->nome_produto . '</h2>';
+                    echo '<h2>' . $pr->nome_produto . '</h2>';
                     echo '<h5>' . $pr->peso_produto . ' ' . $pr->medida . '</h5>';
                     echo '<h4>R$ ' . $pr->valor_unitario_produto . ' ' . $pr->medida_valor . '</h4>';
-                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista"><button class="btn">Visualizar</button></a></center>';
+                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista"><input type="hidden" value="' . $pr->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
                     echo '</div>';
                     echo '</div>';
                 }

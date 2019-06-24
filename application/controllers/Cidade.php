@@ -19,7 +19,6 @@ class Cidade extends CI_Controller {
     public function lista() {
         $data['cidade'] = $this->CidadeModel->getAll();
         $this->load->view('BackEnd/Header');
-        $this->load->view('BackEnd/HeaderLateralEntrega');
         $this->load->view('BackEnd/ListaCidade', $data);
         //$this->load->view('Footer');
     }
@@ -31,7 +30,6 @@ class Cidade extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $data['estado'] = $this->EstadoModel->getAll();
             $this->load->view('BackEnd/Header');
-            $this->load->view('BackEnd/HeaderLateralEntrega');
             $this->load->view('BackEnd/FormCidade', $data);
             //$this->load->view('Footer');
         } else {

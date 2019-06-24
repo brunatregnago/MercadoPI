@@ -1,12 +1,15 @@
 
 <form action="" method="POST" class="col-md-9 mt-5" >
+    
+    <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
+
     <div class="form-row">
-        <div class="form-group col-md-10">
+        <div class="form-group col-md-9">
         <?php
         $mensagem = $this->session->flashdata('mensagem');
         echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
         ?>  
-            <input type="hidden" name="id" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
+            <input type="hidden" name="id_produto" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
 
             <label for="departamento">Departamento</label>
             <select id="id_departamento" class="form-control" name="id_departamento">
@@ -76,7 +79,7 @@
                 }
                 ?>
             </select>
-        </div>
+        </div><!--
         <div class="form-group col-md-5">
             <div class="input-group md-12">
                 <div class="custom-file">
@@ -86,12 +89,12 @@
             </div>
 
             <?php
-            if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
-                echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
-            }
+            //if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
+              //  echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
+            //}
             ?>
         </div>
-    </div>
+    </div>-->
 
 
     <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
