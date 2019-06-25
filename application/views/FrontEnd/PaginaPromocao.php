@@ -14,7 +14,7 @@
                     echo '<h2>' . $po->nome_produto . '</h2>';
                     echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
                     echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
+                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/'.$po->id_produto.'"><button type="submit" class="btn">Visualizar</button></a></center>';
                     echo '</div>';
                     echo '</div>';
                 }

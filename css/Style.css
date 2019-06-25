@@ -216,7 +216,8 @@ center{
 }
 .produtoespecifico img{
     padding: 2%;
-    max-width: 98%;
+    max-width: 250px;
+    max-height: 250px;
 }
 .produtoespecifico h1{
     font-family: Helvetica, sans-serif;
@@ -226,6 +227,7 @@ center{
 }
 .produtoespecifico h4{
     font-family: Helvetica, sans-serif;
+    color: #939090;
     font-size: 17px;
     padding: 0 3%;
 }

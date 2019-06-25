@@ -8,7 +8,7 @@ class MenuCont extends CI_Controller {
         parent::__construct();
         //$this->load->model('LoginModel');
         //$this->LoginModel->verificaLogin();
-        $this->load->model('BackEndModels/DepartamentoModel');
+        $this->load->model('FrontEndModels/DepartamentoMenuModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -16,7 +16,7 @@ class MenuCont extends CI_Controller {
     }
 
     public function lista() {
-        $data['menu'] = $this->DepartamentoModel->getAll();
+        $data['menu'] = $this->DepartamentoMenuModel->getAll();
        
         $this->load->view('FrontEnd/Menu', $data);
     }

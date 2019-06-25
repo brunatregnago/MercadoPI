@@ -2,32 +2,34 @@
 <div class="container">
 
     <?php
-    foreach ($categoria as $cat){
-    echo '<div class="promocao col-10">';
-    echo '<div class="row">';
-    echo '<div class="col-12">';
-    echo '<h1 value="'.$cat->id_categoria.'">'.$cat->nome_categoria.'</h1>';
-    echo '<hr>';
-    echo '</div>';
-    echo '</div>';
-    echo '<div class="row">';
-    echo '<div id="owl-demo" class="owl-carousel owl-theme owl-bruna">';
-    foreach ($produto as $p) {
-        if($cat->id_categoria === $p->cd_categoria){
-        echo '<div class="item">';
-        echo '<div class="produto">';
-        if ($p->imagem_produto === Null) {
-            echo '<img src="uploads/noimage.png"/>';
-        } else {
-            echo '<img src="' . $p->imagem_produto . '"/>';
+    foreach ($categoria as $cat) {
+        echo '<div class="promocao col-10">';
+        echo '<div class="row">';
+        echo '<div class="col-12">';
+        echo '<h1 value="' . $cat->id_categoria . '">' . $cat->nome_categoria . '</h1>';
+        echo '<hr>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="row">';
+        echo '<div id="owl-demo" class="owl-carousel owl-theme owl-bruna">';
+        foreach ($produto as $p) {
+            if ($cat->id_categoria === $p->cd_categoria) {
+                echo '<div class="item">';
+                echo '<div class="produto">';
+                if ($p->imagem_produto === Null) {
+                    echo '<img src="uploads/noimage.png"/>';
+                } else {
+                    echo '<img src="' . $p->imagem_produto . '"/>';
+                }
+                echo '<h2>' . $p->nome_produto . '</h2>';
+                echo '<h5>' . $p->peso_produto . ' ' . $p->medida . '</h5>';
+                echo '<h4>R$ ' . $p->valor_unitario_produto . ' ' . $p->medida_valor . '</h4>';
+                echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $p->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
+                echo '</div>';
+                echo '</div>';
+            }
         }
-        echo '<h2>' . $p->nome_produto . '</h2>';
-        echo '<h5>' . $p->peso_produto . ' ' . $p->medida . '</h5>';
-        echo '<h4>R$ ' . $p->valor_unitario_produto . ' ' . $p->medida_valor . '</h4>';
-        echo '<center><button type="button" class="btn" data-toggle="button" aria-pressed="false" autocomplete="off">Visualizar</button></center>';
-        echo '</div>';
-        echo '</div>';
-    }}}
+    }
     ?>
 </div>
 </div>

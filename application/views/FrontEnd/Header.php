@@ -26,14 +26,14 @@
             <div class="headertwo col-12 mt-3">
                 <ul class="nav justify-content">
                     <li class="nav-item col-md-3">
-                        <a class="nav-link" style="max-height: 80px;" href="#"><img class="align-self-center" src="uploads/logotemp.png"></a>
+                        <a class="nav-link ml-5" style="max-height: 80px;" href="<?= $this->config->base_url() ?>"><img class="align-self-end ml-5" src="uploads/logotemp.png"></a>
                     </li>
-                    <form class="form-inline col-md-5" action="<?= base_url('buscar')?>" method="POST">
-                        <input class="form-control mr-sm-2 col-md-10" id="buscar" name="buscar" type="search" placeholder="Pesquise aqui o que deseja" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <form class="form-inline col-md-6" action="<?= base_url('buscar')?>" method="POST">
+                        <input class="form-control  d-none d-md-block mr-sm-2 col-md-10" id="buscar" name="buscar" type="search" placeholder="Pesquise aqui o que deseja" aria-label="Search">
+                        <button class="btn btn-outline-success  d-none d-md-block my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                     <div class="col-md-1"></div>
-                    <div class="col-md-3 d-none d-md-block"><!--Link para cadastrar usuário-->
+                    <div class="col-md-2 mt-2 d-none d-md-block"><!--Link para cadastrar usuário-->
                         <li><a href="" class="user">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>

@@ -4,14 +4,14 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto"  style="margin: 0 auto;">
                 <li><a href="<?= $this->config->base_url() . 'index.php/PagPromocao/lista' ?>">Promoções</a></li>
                 <?php
-                foreach ($menu as $m) {
-                    echo '<li><a href="'. $this->config->base_url() . 'index.php/PagDepartamento/lista/'.$m->id_departamento  .'">' . $m->nome_departamento . '</a></li>';
-                }
+                    foreach ($menu as $m) {
+                        echo '<li><a href="' . $this->config->base_url() . 'index.php/PagDepartamento/lista/' . $m->id_departamento . '">' . $m->nome_departamento . '</a></li>';
+                    }
                 ?>
-                <li><a href="<?= $this->config->base_url() . 'index.php/PagTodosDepartamentos/lista'?>">Todos Departamentos</a></li>
+                <li><a href="<?= $this->config->base_url() . 'index.php/PagTodosDepartamentos/lista' ?>">Todos Departamentos</a></li>
             </ul>
         </div>
     </nav>
