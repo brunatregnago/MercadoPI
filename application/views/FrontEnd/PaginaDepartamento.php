@@ -3,7 +3,7 @@
 
     <?php
     foreach ($categoria as $cat) {
-        echo '<div class="promocao col-10">';
+        echo '<div class="promocao">';
         echo '<div class="row">';
         echo '<div class="col-12">';
         echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagCategoria/lista/' . $cat->id_categoria . '">' . $cat->nome_categoria . '</a></h1>';

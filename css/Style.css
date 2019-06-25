@@ -258,3 +258,17 @@ center{
     color:#3B3B3B;
     
 }
+.footer{
+    height: 50px;
+    background-color: #F3F1F1;
+}
+.footer h6{
+    margin-top: 30px;
+    color: #939090;
+    font-size: 14px;
+}
+.footer h5{
+    margin-top: 30px;
+    color: #939090;
+    font-size: 14px;
+}

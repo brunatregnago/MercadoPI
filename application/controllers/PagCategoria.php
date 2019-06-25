@@ -21,7 +21,7 @@ class PagCategoria extends CI_Controller {
             $data['menu'] = $this->DepartamentoModel->getAll();
             $data['produto'] = $this->PagInicialModel->getAll();
             $data['promocao'] = $this->PagPromocaoModel->getAll();
-            $data['categoria'] = $this->PagCategoriaModel->getAll($id_categoria);
+            $data['subcategoria'] = $this->PagCategoriaModel->getAll($id_categoria);
             $this->load->view('FrontEnd/Header');
             $this->load->view('FrontEnd/Menu', $data);
             $this->load->view('FrontEnd/PaginaCategoria', $data);
