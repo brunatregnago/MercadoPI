@@ -1,3 +1,4 @@
+
 .headerone{
     background-color: #F3F1F1;
 }
@@ -242,4 +243,18 @@ center{
     font-family: Helvetica, sans-serif;
     font-size: 15px;
     padding: 0 3%;
+}
+.dep{
+    text-align: center;
+    height:400px; 
+}
+.dep .produto a{
+    text-decoration: none;
+    color:#666666;
+    font-size: 18px;
+}
+.dep .produto a:hover{
+    text-decoration: none;
+    color:#3B3B3B;
+    
 }

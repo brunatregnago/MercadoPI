@@ -4,7 +4,7 @@
     <div class="promocao">
         <div class="row">
             <div class="col-12">
-                <a href="http://127.0.0.1/MercadoPI/index.php/PagPromocao/lista"><h1>Promoções</h1></a>
+                <a style="text-decoration: none;" href="http://127.0.0.1/MercadoPI/index.php/PagPromocao/lista"><h1>Promoções</h1></a>
                 <hr>
             </div>
         </div>
@@ -36,11 +36,11 @@
 
     <div class="promocao">
         <div class="row">
-
+                
             <div class="col-12">
                 <?php
                 foreach ($departamentoi as $di) {
-                    echo '<h1 value="' . $di->id_departamento . '">' . $di->nome_departamento . '</h1>';
+                    echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagDepartamento/lista/' . $di->id_departamento . '">' . $di->nome_departamento . '</a></h1>';
                     $dep = $di->id_departamento;
                 }
                 ?>
@@ -95,7 +95,8 @@
             <div class="col-12">
                 <?php
                 foreach ($departamentoit as $dit) {
-                    echo '<h1 value="' . $dit->id_departamento . '">' . $dit->nome_departamento . '</h1>';
+                    echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagDepartamento/lista/' . $dit->id_departamento . '">' . $dit->nome_departamento . '</a></h1>';
+                    
                     $dep = $dit->id_departamento;
                 }
                 ?>

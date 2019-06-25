@@ -26,7 +26,7 @@
             <div class="headertwo col-12 mt-3">
                 <ul class="nav justify-content">
                     <li class="nav-item col-md-3">
-                        <a class="nav-link ml-5" style="max-height: 80px;" href="<?= $this->config->base_url() ?>"><img class="align-self-end ml-5" src="uploads/logotemp.png"></a>
+                        <a class="nav-link ml-5" style="max-height: 80px;" href="<?= $this->config->base_url() ?>"><img class="align-self-end ml-5" src="http://127.0.0.1/MercadoPI/uploads/logotemp.png"></a>
                     </li>
                     <form class="form-inline col-md-6" action="<?= base_url('buscar')?>" method="POST">
                         <input class="form-control  d-none d-md-block mr-sm-2 col-md-10" id="buscar" name="buscar" type="search" placeholder="Pesquise aqui o que deseja" aria-label="Search">
