@@ -17,7 +17,7 @@
                 echo '<div class="item">';
                 echo '<div class="produto">';
                 if ($p->imagem_produto === Null) {
-                    echo '<img src="uploads/noimage.png"/>';
+                    echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                 } else {
                     echo '<img src="' . $p->imagem_produto . '"/>';
                 }

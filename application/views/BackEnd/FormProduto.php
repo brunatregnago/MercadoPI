@@ -1,16 +1,14 @@
 
 <form action="" method="POST" class="col-md-9 mt-5" >
-    
-    <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
+
+    <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Lista</button></a>
 
     <div class="form-row">
-        <div class="form-group col-md-9">
-        <?php
-        $mensagem = $this->session->flashdata('mensagem');
-        echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
-        ?>  
-            <input type="hidden" name="id_produto" value="<?= (isset($produto)) ? $produto->id_produto : ''; ?>">
-
+        <div class="form-group col-md-11">
+            <?php
+            $mensagem = $this->session->flashdata('mensagem');
+            echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');
+            ?>              
             <label for="departamento">Departamento</label>
             <select id="id_departamento" class="form-control" name="id_departamento">
                 <option selected>Selecione o departamento</option>
@@ -21,7 +19,7 @@
                 ?>
             </select>
         </div>
-        <div class="form-group col-md-9">
+        <div class="form-group col-md-11">
             <label for="categoria">Categoria</label>
             <select id="id_categoria" class="form-control" name="id_categoria">
                 <option selected>Selecione a categoria</option>
@@ -32,7 +30,7 @@
                 ?>
             </select>
         </div>
-        <div class="form-group col-md-9">
+        <div class="form-group col-md-11">
             <label for="subcategoria">Subcategoria</label>
             <select id="id_subcategoria" class="form-control" name="id_subcategoria">
                 <option selected>Selecione a subcategoria</option>
@@ -46,15 +44,15 @@
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-9">
+        <div class="form-group col-md-11">
             <label for="nomeproduto">Descrição</label>
             <input type="text" class="form-control" id="nome_produto" placeholder="" name="nome_produto" value="<?= (isset($produto)) ? $produto->nome_produto : ''; ?>">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-5">
             <label for="valor">Preço</label>
             <input type="text" class="form-control" id="valor_unitario_produto" name="valor_unitario_produto"  placeholder="" value="<?= (isset($produto)) ? $produto->valor_unitario_produto : ''; ?>">
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group col-md-6">
             <label for="medida_valor">Unidade do preço</label>
             <select id="id_medida_valor" class="form-control" name="id_medida_valor">
                 <option selected>Selecione a unidade de medida</option>
@@ -65,11 +63,11 @@
                 ?>
             </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-5">
             <label for="peso">Peso</label>
             <input type="text" class="form-control" id="peso_produto" placeholder="" name="peso_produto" value="<?= (isset($produto)) ? $produto->peso_produto : ''; ?>">
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group col-md-6">
             <label for="unidade_medida">Unidade de medida</label>
             <select id="id_medida" name="id_medida" class="form-control">
                 <option selected>Selecione a unidade do peso</option>
@@ -88,17 +86,19 @@
                 </div>
             </div>
 
-            <?php
-            //if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
-              //  echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
-            //}
-            ?>
+        <?php
+        //if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
+        //  echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
+        //}
+        ?>
         </div>
     </div>-->
 
 
-    <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
-    <button type="reset" class="btn btn-secondary mt-4 mb-2">Cancelar</button>
+        <div class="ol-md-10">
+            <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
+            <button type="reset" class="btn btn-secondary ml-2 mt-4 mb-2">Cancelar</button>
+        </div>
 </form>
 </body>
 </html>

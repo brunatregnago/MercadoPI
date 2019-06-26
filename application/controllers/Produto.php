@@ -22,11 +22,6 @@ class Produto extends CI_Controller {
     }
 
     public function lista() {
-        $data['departamento'] = $this->DepartamentoModel->getAll();
-        $data['categoria'] = $this->CategoriaModel->getAll();
-        $data['subcategoria'] = $this->SubcategoriaModel->getAll();
-        $data['unidade_medida'] = $this->UnidadeMedidaModel->getAll();
-        $data['medida_valor'] = $this->MedidaValorModel->getAll();
         $data['produto'] = $this->ProdutoModel->getAll();
         $this->load->view('BackEnd/Header');
         $this->load->view('BackEnd/ListaProduto', $data);
@@ -37,7 +32,6 @@ class Produto extends CI_Controller {
         $this->form_validation->set_rules('id_departamento', 'id_departamento', 'required');
         $this->form_validation->set_rules('id_categoria', 'id_categoria', 'required');
         $this->form_validation->set_rules('id_subcategoria', 'id_subcategoria', 'required');
-        $this->form_validation->set_rules('id_produto', 'id_produto', 'required');
         $this->form_validation->set_rules('nome_produto', 'nome_produto', 'required');
         $this->form_validation->set_rules('peso_produto', 'peso_produto', 'required');
         $this->form_validation->set_rules('id_medida', 'id_medida', 'required');
@@ -52,14 +46,13 @@ class Produto extends CI_Controller {
             $data['unidade_medida'] = $this->UnidadeMedidaModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/FormProduto', $data);
-            //$this->load->view('Footer');
         } else {
 
             $data = array(
+                'id_produto' => $this->input->post('id_produto'),
                 'cd_departamento' => $this->input->post('id_departamento'),
                 'cd_categoria' => $this->input->post('id_categoria'),
                 'cd_subcategoria' => $this->input->post('id_subcategoria'),
-                'id_produto' => $this->input->post('id_produto'),
                 'nome_produto' => $this->input->post('nome_produto'),
                 'peso_produto' => $this->input->post('peso_produto'),
                 'cd_unidade_medida' => $this->input->post('id_medida'),
@@ -84,7 +77,7 @@ class Produto extends CI_Controller {
             }**/
             if ($this->ProdutoModel->insert($data)) {
                 $this->session->set_flashdata('mensagem', 'Produto cadastrado com sucesso.');
-                redirect('index.php/Produto/lista');
+                redirect('index.php/Produto/cadastro');
             } else {
                 $this->session->set_flashdata('mensagem', 'Erro ao cadastrar.');
                 redirect('index.php/Produto/cadastro');

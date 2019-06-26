@@ -33,7 +33,6 @@ class Categoria extends CI_Controller {
             $data['departamento'] = $this->DepartamentoModel->getAll();
             $this->load->view('BackEnd/Header');
             $this->load->view('BackEnd/FormCategoria', $data);
-            //$this->load->view('Footer');
         } else {
 
             $data = array(

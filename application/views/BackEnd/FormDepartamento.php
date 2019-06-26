@@ -1,9 +1,10 @@
 
     <form action="" class="col-8" method="POST">
-        
-    <a href="<?= $this->config->base_url() . 'index.php/Departamento/lista'; ?>"><button type="button" class="btn btn-outline-secondary ml-3 mb-4">Lista</button></a>
-
+    
         <div class="form-group mt-5">
+                
+    <a href="<?= $this->config->base_url() . 'index.php/Departamento/lista'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Lista</button></a>
+
             <div class="form-row">
                 <div class="form-group col-10">
         <?php

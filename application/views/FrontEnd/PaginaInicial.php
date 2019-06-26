@@ -15,7 +15,7 @@
                     echo '<div class="item">';
                     echo '<div class="produto">';
                     if ($pr->imagem_produto === Null) {
-                        echo '<img src="uploads/noimage.png"/>';
+                        echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                     } else {
                         echo '<img src="' . $pr->imagem_produto . '"/>';
                     }
@@ -69,7 +69,7 @@
                             echo '<div class="col-md-12">';
                             echo '<div class="produto">';
                             if ($po->imagem_produto === Null) {
-                                echo '<img src="uploads/noimage.png"/>';
+                                echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                             } else {
                                 echo '<img src="' . $po->imagem_produto . '"/>';
                             }
@@ -114,7 +114,7 @@
                             echo '<div class="col-md-12">';
                             echo '<div class="produto">';
                             if ($po->imagem_produto === Null) {
-                                echo '<img src="uploads/noimage.png"/>';
+                                echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                             } else {
                                 echo '<img src="' . $po->imagem_produto . '"/>';
                             }

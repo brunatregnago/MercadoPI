@@ -19,7 +19,7 @@
 
         
         <div class="row">
-            <div class="card col-md-2 mt-4 bg-success" style="height: 590px;">
+            <div class="card col-md-2 mt-4 bg-success" style="height: 600px;">
                     <div class="text-white text-center mt-4">Administrador do Sistema</div>
                     <ul class="nav flex-column justify-content-center">
                         <li class="nav-item mt-4">
