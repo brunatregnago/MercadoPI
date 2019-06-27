@@ -9,6 +9,7 @@ class PagProdutoEspecifico extends CI_Controller{
         
         $this->load->model('FrontEndModels/DepartamentoMenuModel');
         $this->load->model('FrontEndModels/PagProdutoEspecificoModel');
+        $this->load->model('BackEndModels/ProdutoPromocaoModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -17,6 +18,7 @@ class PagProdutoEspecifico extends CI_Controller{
 
     public function lista($id_produto) {
         $data['produto'] = $this->PagProdutoEspecificoModel->getAll($id_produto);
+        $data['produtopromocao'] = $this->ProdutoPromocaoModel->getAll();
         $data['menu'] = $this->DepartamentoMenuModel->getAll();
         $this->load->view('FrontEnd/Header');
         $this->load->view('FrontEnd/Menu', $data);

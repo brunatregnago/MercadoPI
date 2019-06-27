@@ -218,6 +218,12 @@ center{
     color: red;
     font-weight: bold;
 }
+.produtoespecifico h6{
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 0 3%;
+    color: #92908F;
+}
 .produtoespecifico p{
     font-family: Helvetica, sans-serif;
     font-size: 15px;
@@ -226,6 +232,9 @@ center{
 .dep{
     text-align: center;
     height:400px; 
+}
+.promocao .dep a:hover{
+    text-decoration: none;
 }
 .dep .produto a{
     text-decoration: none;

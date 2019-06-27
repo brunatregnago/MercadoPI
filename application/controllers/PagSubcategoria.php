@@ -11,6 +11,7 @@ class PagSubcategoria extends CI_Controller {
         $this->load->model('BackEndModels/DepartamentoModel');
         $this->load->model('FrontEndModels/PagSubcategoriaModel');
         $this->load->model('FrontEndModels/PagPromocaoModel');
+        $this->load->model('BackEndModels/ProdutoPromocaoModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -18,14 +19,15 @@ class PagSubcategoria extends CI_Controller {
     }
 
     public function lista($id_subcategoria) {
-            $data['menu'] = $this->DepartamentoMenuModel->getAll();
-            $data['produto'] = $this->PagInicialModel->getAll();
-            $data['promocao'] = $this->PagPromocaoModel->getAll();
-            $data['subcategoria'] = $this->PagSubcategoriaModel->getAll($id_subcategoria);
-            $this->load->view('FrontEnd/Header');
-            $this->load->view('FrontEnd/Menu', $data);
-            $this->load->view('FrontEnd/PaginaSubcategoria', $data);
-            $this->load->view('FrontEnd/Footer');
- 
+        $data['menu'] = $this->DepartamentoMenuModel->getAll();
+        $data['produtopromocao'] = $this->ProdutoPromocaoModel->getAll();
+        $data['produto'] = $this->PagInicialModel->getAll();
+        $data['promocao'] = $this->PagPromocaoModel->getAll();
+        $data['subcategoria'] = $this->PagSubcategoriaModel->getAll($id_subcategoria);
+        $this->load->view('FrontEnd/Header');
+        $this->load->view('FrontEnd/Menu', $data);
+        $this->load->view('FrontEnd/PaginaSubcategoria', $data);
+        //$this->load->view('FrontEnd/Footer');
     }
+
 }

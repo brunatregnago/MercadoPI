@@ -12,6 +12,7 @@ class PagDepartamento extends CI_Controller {
         $this->load->model('FrontEndModels/PagDepartamentoModel');
         $this->load->model('FrontEndModels/PagPromocaoModel');
         $this->load->model('BackEndModels/DepartamentoModel');
+        $this->load->model('BackEndModels/ProdutoPromocaoModel');
     }
 
     public function index() {//método padrão para chamar quando nenhum outro é solicitado
@@ -19,16 +20,16 @@ class PagDepartamento extends CI_Controller {
     }
 
     public function lista($id_departamento) {
-            $data['menu'] = $this->DepartamentoMenuModel->getAll();
-            $data['produto'] = $this->PagInicialModel->getAll();
-            $data['promocao'] = $this->PagPromocaoModel->getAll();
-            $data['categoria'] = $this->PagDepartamentoModel->getAll($id_departamento);
-            $data['departamento'] = $this->DepartamentoModel->getAll();
-            $this->load->view('FrontEnd/Header');
-            $this->load->view('FrontEnd/Menu', $data);
-            $this->load->view('FrontEnd/PaginaDepartamento', $data);
-            $this->load->view('FrontEnd/Footer');
- 
+        $data['menu'] = $this->DepartamentoMenuModel->getAll();
+        $data['produtopromocao'] = $this->ProdutoPromocaoModel->getAll();
+        $data['produto'] = $this->PagInicialModel->getAll();
+        $data['promocao'] = $this->PagPromocaoModel->getAll();
+        $data['categoria'] = $this->PagDepartamentoModel->getAll($id_departamento);
+        $data['departamento'] = $this->DepartamentoModel->getAll();
+        $this->load->view('FrontEnd/Header');
+        $this->load->view('FrontEnd/Menu', $data);
+        $this->load->view('FrontEnd/PaginaDepartamento', $data);
+        $this->load->view('FrontEnd/Footer');
     }
 
 }
