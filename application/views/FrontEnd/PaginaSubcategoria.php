@@ -1,14 +1,12 @@
 
 
-    <div class="container">
+<div class="container">
     <?php
     foreach ($subcategoria as $sub) {
         echo '<div class="promocao">';
         echo '<div class="row">';
         echo '<div class="col-12">';
         echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagSubcategoria/lista/' . $sub->id_subcategoria . '">' . $sub->nome_subcategoria . '</a></h1>';
-        
-
         echo '<hr>';
         echo '</div>';
         echo '</div>';
@@ -31,7 +29,6 @@
                 echo '</div>';
                 echo '</div>';
             }
-            
         }
     }
     ?>

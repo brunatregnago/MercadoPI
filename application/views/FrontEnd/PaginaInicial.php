@@ -36,7 +36,6 @@
 
     <div class="promocao">
         <div class="row">
-
             <div class="col-12">
                 <?php
                 foreach ($departamentoi as $di) {
@@ -47,17 +46,6 @@
                 <hr>
             </div>
         </div>
-        <!--            <div class="col-md-2">
-                        <div class="categorias">
-                            <h1><a href="">Mercearia</a></h1>
-                            <h2><a href="">Grãos</a></h2>
-                            <h2><a href="">Óleos, azeites e vinagres</a></h2>
-                            <h2><a href="">Temperos</a></h2>
-                            <h2><a href="">Farinhas</a></h2>
-                            <h2><a href="">Massas e molhos</a></h2>
-                            <h2><a href="">Doces e sobremesas</a></h2>
-                        </div>
-                    </div>-->
         <div class="row">
             <div class="col-md-12">  
                 <div id="owl-demo" class="owl-carousel owl-theme owl-bruna">
@@ -91,7 +79,6 @@
 
     <div class="promocao">
         <div class="row">
-
             <div class="col-12">
                 <?php
                 foreach ($departamentoit as $dit) {
