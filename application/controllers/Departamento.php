@@ -54,7 +54,6 @@ class Departamento extends CI_Controller {
             if ($this->form_validation->run() == false) {
                 $data['departamento'] = $this->DepartamentoModel->getOne($id_departamento);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormDepartamento', $data);
                 //$this->load->view('Footer');
             } else {

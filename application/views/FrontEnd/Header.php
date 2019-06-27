@@ -15,9 +15,6 @@
         <div class="headerone">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Institucional</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="<?= $this->config->base_url() ?>index.php/Usuario/login">Área Restrita</a>
                 </li>
             </ul>
@@ -33,12 +30,12 @@
                         <button class="btn btn-outline-success  d-none d-md-block my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                     <div class="col-md-1"></div>
-                    <div class="col-md-2 mt-2 d-none d-md-block"><!--Link para cadastrar usuário-->
+                    <!--<div class="col-md-2 mt-2 d-none d-md-block">Link para cadastrar usuário
                         <li><a href="" class="user">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
-                    </div>
+                    </div>-->
                 </ul>
             </div>
         </div>

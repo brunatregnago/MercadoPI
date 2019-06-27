@@ -59,7 +59,6 @@ class Cidade extends CI_Controller {
                 $data['estado'] = $this->EstadoModel->getAll();
                 $data['cidade'] = $this->CidadeModel->getOne($id_cidade);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormCidade', $data);
                 //$this->load->view('Footer');
             } else {

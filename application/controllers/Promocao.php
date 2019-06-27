@@ -69,7 +69,7 @@ class Promocao extends CI_Controller {
                     'nome_promocao' => $this->input->post('nome_promocao'),
                     'inicio_promocao' => $this->input->post('inicio_promocao'),
                     'fim_promocao' => $this->input->post('fim_promocao'),
-                    'porcento_desconto' => $this->input->post('oorcento_desconto')//input == entrada
+                    'porcento_desconto' => $this->input->post('porcento_desconto')//input == entrada
                 );
                 if ($this->PromocaoModel->update($id_promocao, $data)) {
                     $this->session->set_flashdata('mensagem', 'Promoção atualizada com sucesso.');

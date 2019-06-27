@@ -1,5 +1,5 @@
 
-    <div class=" table-responsive col-8 mt-5">        
+    <div class=" table-responsive col-9 mt-5">        
     
     <a href="<?= $this->config->base_url() . 'index.php/Categoria/cadastro'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Cadastrar</button></a>
 

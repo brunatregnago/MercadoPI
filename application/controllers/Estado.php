@@ -59,7 +59,6 @@ class Estado extends CI_Controller {
                 $data['pais'] = $this->PaisModel->getAll();                
                 $data['estado'] = $this->EstadoModel->getOne($id_estado);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormEstado', $data);
                 //$this->load->view('Footer');
             } else {

@@ -58,27 +58,27 @@ class Produto extends CI_Controller {
                 'cd_unidade_medida' => $this->input->post('id_medida'),
                 'valor_unitario_produto' => $this->input->post('valor_unitario_produto'),
                 'cd_medida_valor' => $this->input->post('id_medida_valor')
-            );/**
+            );
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_width'] = 1024;
             $config['max_height'] = 768;
-            $config['encrypt_name'] = true;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('userfile')) {
 
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('userfile')) {
                 $error = $this->upload->display_errors();
-                $this->session->set_flashdata('mensagem', '<div class="alert alert-success">' . $error . '</div>');
-                redirect('Produto/cadastrar');
+                $this->session->set_flashdata('mensagem', $error);
+                redirect('index.php/Produto/Cadastro');
                 exit();
             } else {
-
                 $data['imagem_produto'] = $this->upload->data('file_name');
-            }**/
+            }
             if ($this->ProdutoModel->insert($data)) {
                 $this->session->set_flashdata('mensagem', 'Produto cadastrado com sucesso.');
                 redirect('index.php/Produto/cadastro');
             } else {
+                unlink('./uploads/' . $data['imagem_produto']);
                 $this->session->set_flashdata('mensagem', 'Erro ao cadastrar.');
                 redirect('index.php/Produto/cadastro');
             }
@@ -96,7 +96,6 @@ class Produto extends CI_Controller {
             if ($this->form_validation->run() == false) {
                 $data['produto'] = $this->ProdutoModel->getOne($id_produto);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormProduto', $data);
                 //$this->load->view('Footer');
             } else {

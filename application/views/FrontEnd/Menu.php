@@ -7,9 +7,10 @@
             <ul class="navbar-nav mr-auto"  style="margin: 0 auto;">
                 <li><a href="<?= $this->config->base_url() . 'index.php/PagPromocao/lista' ?>">Promoções</a></li>
                 <?php
-                    foreach ($menu as $m) {
+                foreach ($menu as $m) {
                         echo '<li><a href="' . $this->config->base_url() . 'index.php/PagDepartamento/lista/' . $m->id_departamento . '">' . $m->nome_departamento . '</a></li>';
-                    }
+                    
+                }
                 ?>
                 <li><a href="<?= $this->config->base_url() . 'index.php/PagTodosDepartamentos/lista' ?>">Todos Departamentos</a></li>
             </ul>

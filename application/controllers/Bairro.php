@@ -58,7 +58,6 @@ class Bairro extends CI_Controller {
                 $data['cidade'] = $this->CidadeModel->getAll();
                 $data['bairro'] = $this->BairroModel->getOne($id_bairro);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormBairro', $data);
                 //$this->load->view('Footer');
             } else {

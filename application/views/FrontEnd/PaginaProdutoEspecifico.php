@@ -21,16 +21,20 @@
                             <?php
                             foreach ($produto as $po) {
                                 echo '<div class="item">';
-                                echo '<div class="col-md-12" style="height: 292px;">';
+                                echo '<div class="col-md-12">';
                                 echo '<div class="produto">';
+                                echo '<div class="col-md-7">';
                                 if ($po->imagem_produto === Null) {
-                                    echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                                    echo '<img style="height:300px; width:300px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                                 } else {
-                                    echo '<img src="' . $po->imagem_produto . '"/>';
+                                    echo '<img style="height:300px; width:300px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                                 }
+                                echo '</div>';
+                                echo '<div class="col-md-5">';
                                 echo '<h1>' . $po->nome_produto . '</h2>';
                                 echo '<h4>' . $po->peso_produto . ' ' . $po->medida . '</h4>';
                                 echo '<h5>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h5>';
+                                echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</div>';

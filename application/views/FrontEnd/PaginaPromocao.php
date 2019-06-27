@@ -7,14 +7,14 @@
                     echo '<div class="item col-md-2">';
                     echo '<div class="produto">';
                     if ($po->imagem_produto === Null) {
-                        echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                        echo '<img style="height:170px; width:170px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                     } else {
-                        echo '<img src="' . $po->imagem_produto . '"/>';
+                        echo '<img style="height:170px; width:170px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                     }
                     echo '<h2>' . $po->nome_produto . '</h2>';
                     echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
                     echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/'.$po->id_produto.'"><button type="submit" class="btn">Visualizar</button></a></center>';
+                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $po->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
                     echo '</div>';
                     echo '</div>';
                 }

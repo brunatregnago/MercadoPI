@@ -61,7 +61,6 @@ class Categoria extends CI_Controller {
                 $data['departamento'] = $this->DepartamentoModel->getAll();
                 $data['categoria'] = $this->CategoriaModel->getOne($id_categoria);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormCategoria', $data);
                 //$this->load->view('Footer');
             } else {

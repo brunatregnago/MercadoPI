@@ -1,15 +1,12 @@
-
 <div class="container">
 
     <?php
     foreach ($categoria as $cat) {
-        echo '<div class="promocao">';
         echo '<div class="row">';
         echo '<div class="col-12">';
+        echo '<div class="promocao">';
         echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagCategoria/lista/' . $cat->id_categoria . '">' . $cat->nome_categoria . '</a></h1>';
         echo '<hr>';
-        echo '</div>';
-        echo '</div>';
         echo '<div class="row">';
         echo '<div id="owl-demo" class="owl-carousel owl-theme owl-bruna">';
         foreach ($produto as $p) {
@@ -17,9 +14,9 @@
                 echo '<div class="item">';
                 echo '<div class="produto">';
                 if ($p->imagem_produto === Null) {
-                    echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                    echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                 } else {
-                    echo '<img src="' . $p->imagem_produto . '"/>';
+                    echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $p->imagem_produto . '"/>';
                 }
                 echo '<h2>' . $p->nome_produto . '</h2>';
                 echo '<h5>' . $p->peso_produto . ' ' . $p->medida . '</h5>';
@@ -29,12 +26,13 @@
                 echo '</div>';
             }
         }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
     }
     ?>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 

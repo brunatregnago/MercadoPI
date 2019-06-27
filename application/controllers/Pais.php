@@ -54,7 +54,6 @@ class Pais extends CI_Controller {
             if ($this->form_validation->run() == false) {
                 $data['pais'] = $this->PaisModel->getOne($id_pais);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralEntrega');
                 $this->load->view('BackEnd/FormPais', $data);
                 //$this->load->view('Footer');
             } else {

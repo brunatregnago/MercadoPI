@@ -3,20 +3,28 @@
         <div class="painel_produto pt-5 pb-5 mt-4">
             <div class="row">
                 <?php
-                foreach ($produtos as $po) {
-                    echo '<div class="item col-md-2">';
+                if ($produtos == null) {
+                    echo '<div class="item col-md-12">';
                     echo '<div class="produto">';
-                    if ($po->imagem_produto === Null) {
-                        echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
-                    } else {
-                        echo '<img src="' . $po->imagem_produto . '"/>';
+                    echo '<h5>Nenhum produto encontrado.</h5>';
+                    echo '</div>';
+                    echo '</div>';
+                } else {
+                    foreach ($produtos as $po) {
+                        echo '<div class="item col-md-2">';
+                        echo '<div class="produto">';
+                        if ($po->imagem_produto === Null) {
+                            echo '<img style="height:170px; width:170px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                        } else {
+                            echo '<img style="height:170px; width:170px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
+                        }
+                        echo '<h2>' . $po->nome_produto . '</h2>';
+                        echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
+                        echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
+                        echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $po->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
+                        echo '</div>';
+                        echo '</div>';
                     }
-                    echo '<h2>' . $po->nome_produto . '</h2>';
-                    echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
-                    echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                    echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/'.$po->id_produto.'"><button type="submit" class="btn">Visualizar</button></a></center>';
-                    echo '</div>';
-                    echo '</div>';
                 }
                 ?>
             </div>

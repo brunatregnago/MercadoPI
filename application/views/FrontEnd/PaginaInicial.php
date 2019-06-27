@@ -15,9 +15,9 @@
                     echo '<div class="item">';
                     echo '<div class="produto">';
                     if ($pr->imagem_produto === Null) {
-                        echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                        echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                     } else {
-                        echo '<img src="' . $pr->imagem_produto . '"/>';
+                        echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $pr->imagem_produto . '"/>';
                     }
                     echo '<h2>' . $pr->nome_produto . '</h2>';
                     echo '<h5>' . $pr->peso_produto . ' ' . $pr->medida . '</h5>';
@@ -36,7 +36,7 @@
 
     <div class="promocao">
         <div class="row">
-                
+
             <div class="col-12">
                 <?php
                 foreach ($departamentoi as $di) {
@@ -69,14 +69,14 @@
                             echo '<div class="col-md-12">';
                             echo '<div class="produto">';
                             if ($po->imagem_produto === Null) {
-                                echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                                echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                             } else {
-                                echo '<img src="' . $po->imagem_produto . '"/>';
+                                echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                             }
                             echo '<h2>' . $po->nome_produto . '</h2>';
                             echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
                             echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                            echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $pr->id_produto . '"><input type="hidden" value="' . $pr->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
+                            echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $po->id_produto . '"><input type="hidden" value="' . $po->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
@@ -87,8 +87,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="promocao">
         <div class="row">
 
@@ -96,7 +96,7 @@
                 <?php
                 foreach ($departamentoit as $dit) {
                     echo '<h1><a style="text-decoration: none;font-family: Helvetica, sans-serif;font-size: 21px;color: #00802b;font-weight: bold;" href="http://127.0.0.1/MercadoPI/index.php/PagDepartamento/lista/' . $dit->id_departamento . '">' . $dit->nome_departamento . '</a></h1>';
-                    
+
                     $dep = $dit->id_departamento;
                 }
                 ?>
@@ -114,14 +114,14 @@
                             echo '<div class="col-md-12">';
                             echo '<div class="produto">';
                             if ($po->imagem_produto === Null) {
-                                echo '<img src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                                echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                             } else {
-                                echo '<img src="' . $po->imagem_produto . '"/>';
+                                echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                             }
                             echo '<h2>' . $po->nome_produto . '</h2>';
                             echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
                             echo '<h4>R$ ' . $po->valor_unitario_produto . ' ' . $po->medida_valor . '</h4>';
-                            echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $pr->id_produto . '"><input type="hidden" value="' . $pr->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
+                            echo '<center><a href="http://127.0.0.1/MercadoPI/index.php/PagProdutoEspecifico/lista/' . $po->id_produto . '"><input type="hidden" value="' . $po->id_produto . '"><button type="submit" class="btn">Visualizar</button></a></center>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';

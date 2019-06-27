@@ -62,7 +62,6 @@ class Subcategoria extends CI_Controller {
                 $data['categoria'] = $this->CategoriaModel->getAll();
                 $data['subcategoria'] = $this->SubcategoriaModel->getOne($id_subcategoria);
                 $this->load->view('BackEnd/Header');
-                $this->load->view('BackEnd/HeaderLateralProduto');
                 $this->load->view('BackEnd/FormSubcategoria', $data);
                 //$this->load->view('Footer');
             } else {

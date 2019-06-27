@@ -19,7 +19,7 @@
 
         
         <div class="row">
-            <div class="card col-md-2 mt-4 bg-success" style="height: 600px;">
+            <div class="card col-md-2 ml-5 mt-4 mr-5 bg-success" style="height: 400px;">
                     <div class="text-white text-center mt-4">Administrador do Sistema</div>
                     <ul class="nav flex-column justify-content-center">
                         <li class="nav-item mt-4">
@@ -39,7 +39,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Subcategoria/lista'; ?>">Subcategoria</a>
                             <hr>
-                        </li>
+                        </li><!--
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Pais/lista'; ?>">País</a>
                         </li>
@@ -52,7 +52,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Bairro/lista'; ?>">Bairro</a>
                             <hr>
-                        </li>
+                        </li>-->
                         <li class="nav-item md-5">
                             <a class="nav-link" style="color: #a9a9a9;" href="<?= $this->config->base_url() . 'Usuario/sair'; ?>">
                                 <i class="fas fa-sign-out-alt"></i> Sair 
@@ -61,4 +61,3 @@
                         </li>
                     </ul>
             </div>
-            <div class="col-md-1"></div>

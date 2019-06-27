@@ -24,8 +24,6 @@
                 echo '<td>' . $pp->nome_promocao . '</td>';
                 echo '<td>' . $pp->nome_produto . '</td>';
                 echo '<td>'
-                . '<a class="btn btn-warning text-white mr-2" href="' . $this->config->base_url() . 'index.php/ProdutoPromocao/alterar/'
-                . $pp->cd_promocao . '"><i class="fas fa-edit"></i></a>'
                 . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/ProdutoPromocao/deletar/'
                 . $pp->cd_promocao . '"><i class="fas fa-trash"></i></a>'
                 . '</td>';

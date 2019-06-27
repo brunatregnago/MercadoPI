@@ -27,19 +27,6 @@ class ProdutoPromocaoModel extends CI_Model{
     }
 
 
-    public function update($cd_promocao, $data = array()) {
-        if ($cd_promocao > 0) {
-            //filtra o cliente que será alterado 
-            $this->db->where('id_promocao', $cd_promocao);
-            //altera os dados de acordo com o recebido por parametro
-            $this->db->update('tb_produto_promocao', $data);
-            //retorno do número de linhas afetadas
-            return $this->db->affected_rows();
-        } else {
-            return false;
-        }
-    }
-
     public function delete($cd_promocao) {
         if ($cd_promocao > 0) {
             $this->db->where('cd_promocao', $cd_promocao);

@@ -1,5 +1,5 @@
 
-<form action="" method="POST" class="col-md-9 mt-5" >
+<form action="" method="POST" enctype="multipart/form-data" class="col-md-9 mt-5" >
 
     <a href="<?= $this->config->base_url() . 'index.php/Produto/lista'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Lista</button></a>
 
@@ -77,28 +77,20 @@
                 }
                 ?>
             </select>
-        </div><!--
-        <div class="form-group col-md-5">
+        </div>
+    </div>
+
+    <div class="form-group col-md-11">
             <div class="input-group md-12">
-                <div class="custom-file">
-                    <input type="file" name="userfile" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-                    <label class="custom-file-label" for="inputGroupFile03">Imagem do produto</label>
-                </div>
+                <input type="file" name="userfile" size="20" />
+                <input type="submit" value="upload" />
             </div>
-
-        <?php
-        //if (!empty($produto->imagem_produto) && file_exists('./uploads/' . $produto->imagem_produto)) {
-        //  echo '<div class="form-group text-center"><img src="' . base_url('uploads/' . $produto->imagem_produto) . '" width="100" height="100"></div>';
-        //}
-        ?>
+        
         </div>
-    </div>-->
-
-
-        <div class="ol-md-10">
-            <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
-            <button type="reset" class="btn btn-secondary ml-2 mt-4 mb-2">Cancelar</button>
-        </div>
+    <div class="col-md-10">
+        <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
+        <button type="reset" class="btn btn-secondary ml-2 mt-4 mb-2">Cancelar</button>
+    </div>
 </form>
 </body>
 </html>
