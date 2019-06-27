@@ -3,7 +3,7 @@
     
     <a href="<?= $this->config->base_url() . 'index.php/Categoria/cadastro'; ?>"><button type="button" class="btn btn-outline-secondary mb-4">Cadastrar</button></a>
 
-        <table class="table table-striped table-bordered col-md-10" id="table" style="text-align: center;">
+        <table class="table table-striped table-bordered col-md-11" id="table" style="text-align: center;">
         <?php
         $mensagem = $this->session->flashdata('mensagem');
         echo (isset($mensagem) ? '<div class="alert alert-warning col-md-10" role="alert">' . $mensagem . '</div>' : '');

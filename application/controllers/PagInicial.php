@@ -30,6 +30,6 @@ class PagInicial extends CI_Controller {
         $this->load->view('FrontEnd/Header');
         $this->load->view('FrontEnd/Menu', $data);
         $this->load->view('FrontEnd/PaginaInicial', $data);
-        //$this->load->view('FrontEnd/Footer');
+        $this->load->view('FrontEnd/Footer');
     }
 }

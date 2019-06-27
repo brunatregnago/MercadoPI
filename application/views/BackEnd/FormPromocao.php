@@ -34,7 +34,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-success mr-2">Salvar</button>
-        <button type="reset" class="btn btn-secondary mr-2">Cancelar</button>
+        <button type="reset" class="btn btn-secondary mr-2">Limpar</button>
     </div>
 </form>
 </div>

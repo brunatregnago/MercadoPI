@@ -89,7 +89,7 @@
         </div>
     <div class="col-md-10">
         <button type="submit" class="btn btn-success  mt-4 mb-2">Salvar</button>
-        <button type="reset" class="btn btn-secondary ml-2 mt-4 mb-2">Cancelar</button>
+        <button type="reset" class="btn btn-secondary ml-2 mt-4 mb-2">Limpar</button>
     </div>
 </form>
 </body>

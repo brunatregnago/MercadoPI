@@ -1,5 +1,5 @@
 
-<div class="container">
+
     <div class="container">
     <?php
     foreach ($subcategoria as $sub) {
@@ -19,9 +19,9 @@
                 echo '<div class="item">';
                 echo '<div class="produto">';
                 if ($po->imagem_produto === Null) {
-                    echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                    echo '<img style="height:180px; width:180px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                 } else {
-                    echo '<img style="height:170px; width:170px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
+                    echo '<img style="height:180px; width:180px;margin:5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                 }
                 echo '<h2>' . $po->nome_produto . '</h2>';
                 echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
@@ -35,6 +35,9 @@
         }
     }
     ?>
+</div>
+</div>
+</div>
 </div>
 <script src="<?= $this->config->base_url() ?>js/owl.carousel.min.js"></script>
 <script>

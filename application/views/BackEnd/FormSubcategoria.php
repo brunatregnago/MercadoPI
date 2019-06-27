@@ -24,7 +24,7 @@
             <input type="text" class="form-control" id="nome_subcategoria" placeholder="" name="nome_subcategoria" placeholder="" value="<?= (isset($subcategoria)) ? $subcategoria->nome_subcategoria : ''; ?>">
         </div>
         <button type="submit" class="btn btn-success mb-2">Salvar</button>
-        <button type="reset" class="btn btn-secondary mb-2">Cancelar</button>
+        <button type="reset" class="btn btn-secondary mb-2">Limpar</button>
     </div>
 </form>
 </div>

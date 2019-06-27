@@ -148,27 +148,6 @@ hr{
     font-weight: bold;
     margin: 0 auto;
 }
-.rodape{
-    background-color: #00802b;
-    margin-top: 5%;
-    padding: 1%;
-}
-.rodape h1{
-    color: #004d00;
-    font-size:16px;
-    font-family: Helvetica, sans-serif;
-    margin-left:35px;
-}
-.rodape ul li{
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    list-style: none;
-    font-family: Helvetica, sans-serif;
-}
-.rodape .cat{
-    margin-top: 25px;
-}
 .owl-bruna .owl-nav {
     position: absolute;
     top: 30%;
@@ -259,17 +238,11 @@ center{
     
 }
 .footer{
-    height: 50px;
+    height: 60px;
     background-color: #F3F1F1;
-    margin-bottom: 0;
 }
 .footer h6{
-    margin-top: 30px;
-    color: #939090;
-    font-size: 14px;
-}
-.footer h5{
-    margin-top: 30px;
+    
     color: #939090;
     font-size: 14px;
 }

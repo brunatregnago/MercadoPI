@@ -7,9 +7,9 @@
                     echo '<div class="item col-md-2">';
                     echo '<div class="produto">';
                     if ($po->imagem_produto === Null) {
-                        echo '<img style="height:170px; width:170px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
+                        echo '<img style="height:180px; width:180px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/noimage.png"/>';
                     } else {
-                        echo '<img style="height:170px; width:170px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
+                        echo '<img style="height:180px; width:180px;margin: 5px;" src="http://127.0.0.1/MercadoPI/uploads/' . $po->imagem_produto . '"/>';
                     }
                     echo '<h2>' . $po->nome_produto . '</h2>';
                     echo '<h5>' . $po->peso_produto . ' ' . $po->medida . '</h5>';
