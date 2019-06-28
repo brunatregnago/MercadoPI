@@ -45,7 +45,7 @@ class ProdutoPromocao extends CI_Controller {
             );
 
             if ($this->ProdutoPromocaoModel->insert($data)) {
-                $this->session->set_flashdata('mensagem', 'Promoção cadastrada com sucesso.');
+                $this->session->set_flashdata('mensagem', 'Produto em promoção cadastrado com sucesso.');
                 redirect('index.php/ProdutoPromocao/cadastro');
             } else {
                 $this->session->set_flashdata('mensagem', 'Erro ao cadastrar');
@@ -54,10 +54,10 @@ class ProdutoPromocao extends CI_Controller {
         }
     }
 
-    public function deletar($cd_promocao) {
-        if ($cd_promocao > 0) {
-            if ($this->ProdutoPromocaoModel->delete($cd_promocao)) {
-                $this->session->set_flashdata('mensagem', 'Promoção deletada.');
+    public function deletar($cd_produto) {
+        if ($cd_produto > 0) {
+            if ($this->ProdutoPromocaoModel->delete($cd_produto)) {
+                $this->session->set_flashdata('mensagem', 'Produto em promoção deletado.');
             } else {
                 $this->session->set_flashdata('mensagem', 'Falha ao deletar.');
             }

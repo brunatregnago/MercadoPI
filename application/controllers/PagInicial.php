@@ -23,6 +23,7 @@ class PagInicial extends CI_Controller {
     }
 
     public function lista() {
+        
         $data['produto'] = $this->PagInicialModel->getAll();
         $data['promocao'] = $this->PagPromocaoModel->getAll();
         $data['produtopromocao'] = $this->ProdutoPromocaoModel->getAll();

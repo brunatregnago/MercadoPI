@@ -27,9 +27,9 @@ class ProdutoPromocaoModel extends CI_Model{
     }
 
 
-    public function delete($cd_promocao) {
-        if ($cd_promocao > 0) {
-            $this->db->where('cd_promocao', $cd_promocao);
+    public function delete($cd_produto) {
+        if ($cd_produto > 0) {
+            $this->db->where('cd_produto', $cd_produto);
             $this->db->delete('tb_produto_promocao');
 
             return $this->db->affected_rows();

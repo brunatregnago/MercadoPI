@@ -25,7 +25,7 @@
                 echo '<td>' . $pp->nome_produto . '</td>';
                 echo '<td>'
                 . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'index.php/ProdutoPromocao/deletar/'
-                . $pp->cd_promocao . '"><i class="fas fa-trash"></i></a>'
+                . $pp->cd_produto . '"><i class="fas fa-trash"></i></a>'
                 . '</td>';
                 echo '</tr>';
             }
